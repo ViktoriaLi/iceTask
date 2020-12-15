@@ -24,7 +24,7 @@ struct RangeSlider: View {
                 //SliderLine(minValue: self.metaData.currentPoint.minValue, maxValue: self.metaData.currentPoint.maxValue)
                 Rectangle()
                 .fill(Color.gray.opacity(0.5))
-                .frame(width: totalWidth, height: 3)
+                .frame(height: 3)
                 .offset(x: 15)
                 Rectangle()
                 .fill(Color.blue)
@@ -54,7 +54,7 @@ struct RangeSlider: View {
                                 .foregroundColor(Color.blue)
                                 .multilineTextAlignment(.trailing)
                             SliderCircle()
-                                .offset(x: self.metaData.currentPoint.maxValue - 52)
+                                .offset(x: self.metaData.currentPoint.maxValue - 50)
                         }
                         .padding(.bottom, 27.0)
                     .gesture(

@@ -28,7 +28,8 @@ enum SliderLabel: String {
     }
 }
 
-struct SliderPoint: Equatable {
+struct SliderPoint: Equatable, Identifiable {
+    var id: Int
     var minValue: Int
     var maxValue: Int
 }
@@ -75,16 +76,15 @@ struct FiltersView: View {
             }
             .navigationBarTitle("Фильтры", displayMode: .inline)
             .navigationBarItems(leading:
-                Button(action: {
-                    print("button pressed")})
-                {
-                    Image("close")
-                    .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
-                })
-            .navigationBarItems(trailing:
-                Button("Сбросить") {
-                    //
-                })
+            Button(action: {
+                print("button pressed")})
+            {
+                Image("close")
+                .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
+            }, trailing:
+            Button("Сбросить") {
+                //
+            })
         }
         
         .onAppear(perform: loadSliders)

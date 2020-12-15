@@ -16,10 +16,10 @@ class SliderSettings {
     init(width: CGFloat) {
         self.width = width
     }
-    var slidersMeta: [SliderInfo] = [SliderInfo(rangePoint: SliderPoint(minValue: 0, maxValue: 31), currentPoint: SliderPoint(minValue: 0, maxValue: 31), step: 1),
-    SliderInfo(rangePoint: SliderPoint(minValue: 0, maxValue: 30), currentPoint: SliderPoint(minValue: 0, maxValue: 30), step: 2),
-    SliderInfo(rangePoint: SliderPoint(minValue: 0, maxValue: 30), currentPoint: SliderPoint(minValue: 17, maxValue: 19), step: 1),
-    SliderInfo(rangePoint: SliderPoint(minValue: 0, maxValue: 30), currentPoint: SliderPoint(minValue: 6, maxValue: 13), step: 1)]
+    var slidersMeta: [SliderInfo] = [SliderInfo(rangePoint: SliderPoint(id: 0, minValue: 0, maxValue: 31), currentPoint: SliderPoint(id: 0, minValue: 0, maxValue: 31), step: 1),
+                                     SliderInfo(rangePoint: SliderPoint(id: 1, minValue: 0, maxValue: 31), currentPoint: SliderPoint(id: 1, minValue: 0, maxValue: 31), step: 2),
+                                     SliderInfo(rangePoint: SliderPoint(id: 2, minValue: 0, maxValue: 31), currentPoint: SliderPoint(id: 2, minValue: 17, maxValue: 19), step: 1),
+                                     SliderInfo(rangePoint: SliderPoint(id: 3, minValue: 0, maxValue: 31), currentPoint: SliderPoint(id: 3, minValue: 6, maxValue: 13), step: 1)]
     
     func slidersLocation() -> [SliderLocationInfo] {
         var resultArray = [SliderLocationInfo]()
