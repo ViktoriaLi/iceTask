@@ -15,6 +15,8 @@
 		C114991F2587DE5900409BF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C114991D2587DE5900409BF4 /* LaunchScreen.storyboard */; };
 		C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA412587FE38003A44C6 /* RangeSlider.swift */; };
 		C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA4325880F72003A44C6 /* SliderCircle.swift */; };
+		C1BA14A22588BEF500B0A226 /* CircleWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */; };
+		C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A32588C5EB00B0A226 /* SliderLine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C11499202587DE5900409BF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		C170BA4325880F72003A44C6 /* SliderCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCircle.swift; sourceTree = "<group>"; };
+		C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithLabel.swift; sourceTree = "<group>"; };
+		C1BA14A32588C5EB00B0A226 /* SliderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				C114991A2587DE5900409BF4 /* Preview Content */,
 				C170BA412587FE38003A44C6 /* RangeSlider.swift */,
 				C170BA4325880F72003A44C6 /* SliderCircle.swift */,
+				C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */,
+				C1BA14A32588C5EB00B0A226 /* SliderLine.swift */,
 			);
 			path = IceTask;
 			sourceTree = "<group>";
@@ -154,6 +160,8 @@
 			files = (
 				C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */,
 				C11499132587DE5300409BF4 /* AppDelegate.swift in Sources */,
+				C1BA14A22588BEF500B0A226 /* CircleWithLabel.swift in Sources */,
+				C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */,
 				C11499152587DE5300409BF4 /* SceneDelegate.swift in Sources */,
 				C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */,
 				C11499172587DE5300409BF4 /* FiltersView.swift in Sources */,

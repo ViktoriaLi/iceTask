@@ -9,69 +9,62 @@
 import SwiftUI
 
 struct RangeSlider: View {
-    var metaData: SliderInfo
-    @State var width: CGFloat = 0
-    @State var width1: CGFloat = 60
+    @State var metaData: SliderInfo
     
     var totalWidth = UIScreen.main.bounds.width - 60
+    
     var body: some View {
+        
         VStack {
             ZStack(alignment: .leading) {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.5))
-                    .frame(height: 3)
-                Rectangle()
-                    .fill(Color.blue)
-                    .frame(width: self.width1 - self.width, height: 3)
-                    .offset(x: self.width)
+                SliderLine(minValue: CGFloat(self.metaData.currentPoint.minValue), maxValue: CGFloat(self.metaData.currentPoint.maxValue))
                 HStack(spacing: 0) {
-                    VStack(spacing: 8.0) {
-                        Text("\(stringvValue(from: self.width)) ночь").font(.system(size: 16))
-                            .foregroundColor(Color.blue)
-                            .multilineTextAlignment(.leading)
-                        SliderCircle()
-                        .offset(x: self.width)
-                    }
-                    .padding(.bottom, 27.0)
+                    CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.minValue), location: CGFloat(self.metaData.currentPoint.minValue))
                     .gesture(
                     DragGesture()
                         .onChanged({ (value) in
-                            if value.location.x >= 0 && value.location.x <= self.width1 {
-                            self.width = value.location.x
+                            if value.location.x >= 0 && value.location.x <= self.metaData.currentPoint.maxValue {
+                                self.metaData.currentPoint.minValue = value.location.x
                             }
                         }))
-                    VStack(alignment: .leading, spacing: 8.0) {
-                        Text("Более \(stringvValue(from: self.width1)) ночей")
-                            .font(.system(size: 16))
-                            .foregroundColor(Color.blue)
-                            .multilineTextAlignment(.trailing)
-                        SliderCircle()
-                            .offset(x: self.width1)
-                    }
-                    .padding(.bottom, 27.0)
+                    CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.maxValue), location: CGFloat(self.metaData.currentPoint.maxValue))
                     .gesture(
                     DragGesture()
                         .onChanged({ (value) in
-                            if value.location.x <= self.totalWidth && value.location.x >= self.width {
-                            self.width1 = value.location.x
+                            if value.location.x <= self.totalWidth && value.location.x >= self.metaData.currentPoint.minValue {
+                            self.metaData.currentPoint.maxValue = value.location.x
                             }
                         }))
                 }
             }
-
         }
         .padding()
         .frame(height: 94.0)
-
     }
-    private func stringvValue(from value: CGFloat) -> String {
-        
-        return String(Int(value / 31))
+    
+    private func intValue(from value: CGFloat) -> Int {
+        return Int(CGFloat(value) * (UIScreen.main.bounds.width - 60) / 31)
     }
 }
 
 struct RangeSlider_Previews: PreviewProvider {
     static var previews: some View {
-        RangeSlider(metaData: SliderInfo(minValue: 1, maxValue: 30, currentValue: 1, step: 1))
+        RangeSlider(metaData: SliderInfo(rangePoint: SliderPoint(minValue: 1, maxValue: 31), currentPoint: SliderPoint(minValue: 1, maxValue: 31), step: 1))
     }
 }
+
+/*.gesture(
+DragGesture()
+    .onChanged({ (value) in
+        if value.location.x >= 0 && value.location.x <= self.metaData.currentPoint.maxValue {
+        self.metaData.currentPoint.minValue = value.location.x
+        }
+    }))*/
+
+/*.gesture(
+DragGesture()
+    .onChanged({ (value) in
+        if value.location.x <= self.totalWidth && value.location.x >= self.metaData.currentPoint.minValue {
+        self.metaData.currentPoint.maxValue = value.location.x
+        }
+    }))*/

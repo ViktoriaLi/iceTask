@@ -11,15 +11,13 @@ import SwiftUI
 struct SliderCircle: View {
     
     var body: some View {
-        let grayColor = Color(red: 242, green: 247, blue: 249).opacity(1)
-        let gradient = LinearGradient(gradient: Gradient(colors: [Color.white, Color.gray), startPoint: .top, endPoint: .bottom)
+        let gradient = LinearGradient(gradient: Gradient(colors: [Color.white, Color("gradientGray")]), startPoint: .top, endPoint: .bottom)
         //ZStack {
-        //let color = Color(red: 68, green: 78, blue: 84).opacity(0.20)
             return Circle()
-            .fill(gradient)
+            .fill(gradient).opacity(1)
             .frame(width: 31, height: 31)
-            //.aspectRatio(contentMode: .fit)
-            //.shadow(color: color, radius: 7, x: 0, y: 3)
+            .aspectRatio(contentMode: .fill)
+            .shadow(color: Color("circleShadow"), radius: 7, x: 0, y: 3)
         //}
     }
 }
