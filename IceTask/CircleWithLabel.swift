@@ -20,7 +20,7 @@ struct CircleWithLabel: View {
             SliderCircle()
                 .offset(x: location)
         }
-        //.padding(.bottom, 27.0)
+        .padding(.bottom, 27.0)
     }
 }
 

@@ -16,12 +16,12 @@ enum SliderLabel: String {
     
     static func chooseText(for nights: Int) -> String {
         switch nights {
-        case 1, 21:
-            return "\(nights) " + self.one.rawValue
-        case 5...20, 25...30:
-            return "\(nights) " + self.many.rawValue
-        case 2...4, 22...24:
-            return "\(nights) " + self.howMany.rawValue
+        case 0, 20:
+            return "\(nights + 1) " + self.one.rawValue
+        case 4...19, 24...29:
+            return "\(nights + 1) " + self.many.rawValue
+        case 1...3, 21...23:
+            return "\(nights + 1) " + self.howMany.rawValue
         default:
             return self.more.rawValue
         }
@@ -29,25 +29,33 @@ enum SliderLabel: String {
 }
 
 struct SliderPoint: Equatable {
+    var minValue: Int
+    var maxValue: Int
+}
+
+struct SliderPointLocation: Equatable {
     var minValue: CGFloat
     var maxValue: CGFloat
 }
 
 struct SliderInfo {
     let rangePoint: SliderPoint
-    //let defaultPoint: SliderPoint
     var currentPoint: SliderPoint
     let step: UInt
 }
 
+struct SliderLocationInfo {
+    let rangePoint: SliderPointLocation
+    var currentPoint: SliderPointLocation
+    let step: UInt
+}
+
 struct FiltersView: View {
-    @State private var sliders = [SliderInfo(rangePoint: SliderPoint(minValue: 1, maxValue: 31), currentPoint: SliderPoint(minValue: 1, maxValue: 31), step: 1),
-        SliderInfo(rangePoint: SliderPoint(minValue: 1, maxValue: 31), currentPoint: SliderPoint(minValue: 1, maxValue: 31), step: 2),
-        SliderInfo(rangePoint: SliderPoint(minValue: 1, maxValue: 31), currentPoint: SliderPoint(minValue: 18, maxValue: 20), step: 1),
-        SliderInfo(rangePoint: SliderPoint(minValue: 1, maxValue: 31), currentPoint: SliderPoint(minValue: 7, maxValue: 14), step: 1)]
     
-    @State var slider1Value: Double = 1
-    @State var slider2Value: Double = 1
+    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
+    
+    @State var sliders: [SliderLocationInfo]
+
     
     var body: some View {
         NavigationView {
@@ -66,14 +74,19 @@ struct FiltersView: View {
             }) {
                 Text("Применить")
             }
-        .navigationBarTitle(Text("Фильтры"))
         }
+        .navigationBarTitle(Text("Фильтры"))
+        .onAppear(perform: loadSliders)
+    }
+    
+    func loadSliders() {
+         sliders = sliderManager.slidersLocation()
     }
 }
 
 struct FiltersView_Previews: PreviewProvider {
     static var previews: some View {
-        FiltersView()
+        FiltersView(sliders: [])
     }
 }
 

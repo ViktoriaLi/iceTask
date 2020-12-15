@@ -10,8 +10,8 @@ import SwiftUI
 
 struct SliderLine: View {
 
-    var minValue: CGFloat
-    var maxValue: CGFloat
+    @State var minValue: CGFloat
+    @State var maxValue: CGFloat
     
     var body: some View {
         ZStack {
