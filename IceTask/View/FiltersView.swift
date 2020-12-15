@@ -8,20 +8,22 @@
 
 import SwiftUI
 
-struct FiltersView: View {
-    
-    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
+struct FiltersEditorView: View {
     
     @State var sliders: [SliderLocationInfo]
-
-     @Environment(\.presentationMode) var presentationMode
+    @State var choosenSliders: [SliderPointLocation]
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
     
     var body: some View {
         VStack {
             Form {
+                
                 ForEach(0..<sliders.count) { index in
                     Section(header: Text("\(index + 1)")) {
-                        RangeSlider(metaData: self.sliders[index])
+                        RangeSlider(metaData: self.sliders[index], currentValue: self.choosenSliders[index])
                     }
                 }
             }
@@ -48,13 +50,15 @@ struct FiltersView: View {
     
     func loadSliders() {
          sliders = sliderManager.slidersLocation()
+        //var defaultValues = sliders.map({$0.currentPoint})
+        choosenSliders = sliders.map({$0.currentPoint})
     }
 }
 
-struct FiltersView_Previews: PreviewProvider {
+/*struct FiltersEditorView_Previews: PreviewProvider {
     static var previews: some View {
-        FiltersView(sliders: [])
+        FiltersEditorView(sliders: [], choosenSliders: [])
     }
-}
+}*/
 
 

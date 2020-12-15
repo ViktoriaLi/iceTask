@@ -79,19 +79,13 @@
 			isa = PBXGroup;
 			children = (
 				C13EEF8B2589101C00362CD1 /* Model */,
+				C13EEF96258910CB00362CD1 /* View */,
 				C11499122587DE5300409BF4 /* AppDelegate.swift */,
 				C11499142587DE5300409BF4 /* SceneDelegate.swift */,
-				C11499162587DE5300409BF4 /* FiltersView.swift */,
 				C11499182587DE5900409BF4 /* Assets.xcassets */,
 				C114991D2587DE5900409BF4 /* LaunchScreen.storyboard */,
 				C11499202587DE5900409BF4 /* Info.plist */,
 				C114991A2587DE5900409BF4 /* Preview Content */,
-				C170BA412587FE38003A44C6 /* RangeSlider.swift */,
-				C170BA4325880F72003A44C6 /* SliderCircle.swift */,
-				C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */,
-				C1BA14A32588C5EB00B0A226 /* SliderLine.swift */,
-				C13EEF872588D96300362CD1 /* SliderSettings.swift */,
-				C13EEF89258900D100362CD1 /* FiltersValues.swift */,
 			);
 			path = IceTask;
 			sourceTree = "<group>";
@@ -114,6 +108,20 @@
 				C13EEF942589108100362CD1 /* SliderLocationInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C13EEF96258910CB00362CD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C13EEF89258900D100362CD1 /* FiltersValues.swift */,
+				C11499162587DE5300409BF4 /* FiltersView.swift */,
+				C170BA412587FE38003A44C6 /* RangeSlider.swift */,
+				C170BA4325880F72003A44C6 /* SliderCircle.swift */,
+				C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */,
+				C1BA14A32588C5EB00B0A226 /* SliderLine.swift */,
+				C13EEF872588D96300362CD1 /* SliderSettings.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

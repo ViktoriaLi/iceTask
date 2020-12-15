@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct SliderPointLocation: Equatable {
     var minValue: CGFloat
