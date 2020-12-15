@@ -22,7 +22,10 @@ struct FiltersEditorView: View {
             Form {
                 
                 ForEach(0..<sliders.count) { index in
-                    Section(header: Text("\(index + 1)")) {
+                    Section(header: Text("\(index + 1)")
+                        //.foregroundColor(.black)
+                        //.alignmentGuide(.center)
+                        .font(.system(size: 17))) {
                         RangeSlider(metaData: self.sliders[index], currentValue: self.choosenSliders[index])
                     }
                 }

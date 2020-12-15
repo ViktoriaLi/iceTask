@@ -14,7 +14,7 @@ class SliderSettings {
     let width: CGFloat
     
     init(width: CGFloat) {
-        self.width = width
+        self.width = width - 15
     }
     var slidersMeta: [SliderInfo] = [SliderInfo(rangePoint: SliderPoint(id: 0, minValue: 0, maxValue: 31), defaultPoint: SliderPoint(id: 0, minValue: 0, maxValue: 31), step: 1),
                                      SliderInfo(rangePoint: SliderPoint(id: 1, minValue: 0, maxValue: 31), defaultPoint: SliderPoint(id: 1, minValue: 0, maxValue: 31), step: 2),

@@ -30,7 +30,6 @@ struct RangeSlider: View {
                 Rectangle()
                     .fill(Color.blue)
                     .frame(width: self.currentValue.maxValue - self.currentValue.minValue, height: 3)
-                    
                     .offset(x: self.currentValue.minValue)
                 HStack(alignment: .center, spacing: 10) {
                     //CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.minValue), location: self.metaData.currentPoint.minValue)
@@ -54,11 +53,12 @@ struct RangeSlider: View {
                                     }
                                 }))
                     SliderCircle()
-                        .offset(x: self.currentValue.maxValue - 52)
+                        .offset(x: self.currentValue.maxValue - 50)
                         .gesture(
                             DragGesture()
                                 .onChanged({ (value) in
-                                    if value.location.x <= self.totalWidth + 52 && value.location.x >= self.currentValue.minValue {
+                                    if value.location.x <= self.totalWidth + 62 && value.location.x >= self.currentValue.minValue {
+                                        print(value.location.x)
                                         self.currentValue.maxValue = value.location.x
                                     }
                                 }))
@@ -78,7 +78,7 @@ struct RangeSlider: View {
     }
     
     private func intValue(from value: CGFloat) -> Int {
-        return Int(value * 31 / (UIScreen.main.bounds.width - 60))
+        return Int(value * 32 / (UIScreen.main.bounds.width - 60))
     }
     
     private func floatValue<T>(from value: T) -> CGFloat {
