@@ -25,7 +25,7 @@ struct RangeSlider: View {
                 //SliderLine(minValue: self.metaData.currentPoint.minValue, maxValue: self.metaData.currentPoint.maxValue)
                 Rectangle()
                     .fill(Color.gray.opacity(0.5))
-                    .frame(height: 3)
+                    .frame(width: totalWidth, height: 3)
                 //.offset(x: 15)
                 Rectangle()
                     .fill(Color.blue)
@@ -42,12 +42,10 @@ struct RangeSlider: View {
                             .foregroundColor(Color.blue)
                             .multilineTextAlignment(.trailing)
                 }
- 
                 .padding(.bottom, 70.0)
                 HStack(alignment: .center, spacing: 10) {
                     SliderCircle()
                         .offset(x: self.currentValue.minValue - 15)
-                        //.padding(.bottom, 27.0)
                         .gesture(
                             DragGesture()
                                 .onChanged({ (value) in
@@ -55,23 +53,19 @@ struct RangeSlider: View {
                                         self.currentValue.minValue = value.location.x
                                     }
                                 }))
-                    //CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.maxValue), location: self.metaData.currentPoint.maxValue)
                     SliderCircle()
-                        .offset(x: self.currentValue.maxValue - 65)
-                        //.padding(.bottom, 27.0)
+                        .offset(x: self.currentValue.maxValue - 52)
                         .gesture(
                             DragGesture()
                                 .onChanged({ (value) in
-                                    if value.location.x <= self.totalWidth && value.location.x >= self.currentValue.minValue {
+                                    if value.location.x <= self.totalWidth + 52 && value.location.x >= self.currentValue.minValue {
                                         self.currentValue.maxValue = value.location.x
                                     }
                                 }))
                 }
-                .padding(.trailing, 5.0)
-                .frame(width: 100.0)
+                //.padding(.trailing, 5.0)
+                //.frame(width: 100.0)
                 .allowsTightening(false)
-                
-                
             }
         }
         .onAppear(perform: pr)
