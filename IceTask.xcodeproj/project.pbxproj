@@ -15,6 +15,11 @@
 		C114991F2587DE5900409BF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C114991D2587DE5900409BF4 /* LaunchScreen.storyboard */; };
 		C13EEF882588D96300362CD1 /* SliderSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF872588D96300362CD1 /* SliderSettings.swift */; };
 		C13EEF8A258900D100362CD1 /* FiltersValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF89258900D100362CD1 /* FiltersValues.swift */; };
+		C13EEF8D2589103700362CD1 /* SliderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF8C2589103700362CD1 /* SliderLabel.swift */; };
+		C13EEF8F2589104D00362CD1 /* SliderPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF8E2589104D00362CD1 /* SliderPoint.swift */; };
+		C13EEF912589105D00362CD1 /* SliderPointLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF902589105D00362CD1 /* SliderPointLocation.swift */; };
+		C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF922589106E00362CD1 /* SliderInfo.swift */; };
+		C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF942589108100362CD1 /* SliderLocationInfo.swift */; };
 		C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA412587FE38003A44C6 /* RangeSlider.swift */; };
 		C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA4325880F72003A44C6 /* SliderCircle.swift */; };
 		C1BA14A22588BEF500B0A226 /* CircleWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */; };
@@ -32,6 +37,11 @@
 		C11499202587DE5900409BF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C13EEF872588D96300362CD1 /* SliderSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSettings.swift; sourceTree = "<group>"; };
 		C13EEF89258900D100362CD1 /* FiltersValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersValues.swift; sourceTree = "<group>"; };
+		C13EEF8C2589103700362CD1 /* SliderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLabel.swift; sourceTree = "<group>"; };
+		C13EEF8E2589104D00362CD1 /* SliderPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPoint.swift; sourceTree = "<group>"; };
+		C13EEF902589105D00362CD1 /* SliderPointLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPointLocation.swift; sourceTree = "<group>"; };
+		C13EEF922589106E00362CD1 /* SliderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderInfo.swift; sourceTree = "<group>"; };
+		C13EEF942589108100362CD1 /* SliderLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLocationInfo.swift; sourceTree = "<group>"; };
 		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; usesTabs = 0; };
 		C170BA4325880F72003A44C6 /* SliderCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCircle.swift; sourceTree = "<group>"; };
 		C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithLabel.swift; sourceTree = "<group>"; };
@@ -68,6 +78,7 @@
 		C11499112587DE5300409BF4 /* IceTask */ = {
 			isa = PBXGroup;
 			children = (
+				C13EEF8B2589101C00362CD1 /* Model */,
 				C11499122587DE5300409BF4 /* AppDelegate.swift */,
 				C11499142587DE5300409BF4 /* SceneDelegate.swift */,
 				C11499162587DE5300409BF4 /* FiltersView.swift */,
@@ -91,6 +102,18 @@
 				C114991B2587DE5900409BF4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C13EEF8B2589101C00362CD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C13EEF8C2589103700362CD1 /* SliderLabel.swift */,
+				C13EEF8E2589104D00362CD1 /* SliderPoint.swift */,
+				C13EEF902589105D00362CD1 /* SliderPointLocation.swift */,
+				C13EEF922589106E00362CD1 /* SliderInfo.swift */,
+				C13EEF942589108100362CD1 /* SliderLocationInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,14 +188,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */,
+				C13EEF8D2589103700362CD1 /* SliderLabel.swift in Sources */,
 				C11499132587DE5300409BF4 /* AppDelegate.swift in Sources */,
+				C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */,
 				C1BA14A22588BEF500B0A226 /* CircleWithLabel.swift in Sources */,
 				C13EEF8A258900D100362CD1 /* FiltersValues.swift in Sources */,
 				C13EEF882588D96300362CD1 /* SliderSettings.swift in Sources */,
 				C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */,
 				C11499152587DE5300409BF4 /* SceneDelegate.swift in Sources */,
+				C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */,
 				C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */,
 				C11499172587DE5300409BF4 /* FiltersView.swift in Sources */,
+				C13EEF912589105D00362CD1 /* SliderPointLocation.swift in Sources */,
+				C13EEF8F2589104D00362CD1 /* SliderPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

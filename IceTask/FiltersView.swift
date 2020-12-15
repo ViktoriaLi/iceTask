@@ -8,86 +8,42 @@
 
 import SwiftUI
 
-enum SliderLabel: String {
-    case many = "ночей"
-    case howMany = "ночи"
-    case one = "ночь"
-    case more = "Более 30 ночей"
-    
-    static func chooseText(for nights: Int) -> String {
-        switch nights {
-        case 0, 20:
-            return "\(nights + 1) " + self.one.rawValue
-        case 4...19, 24...29:
-            return "\(nights + 1) " + self.many.rawValue
-        case 1...3, 21...23:
-            return "\(nights + 1) " + self.howMany.rawValue
-        default:
-            return self.more.rawValue
-        }
-    }
-}
-
-struct SliderPoint: Equatable, Identifiable {
-    var id: Int
-    var minValue: Int
-    var maxValue: Int
-}
-
-struct SliderPointLocation: Equatable {
-    var minValue: CGFloat
-    var maxValue: CGFloat
-}
-
-struct SliderInfo {
-    let rangePoint: SliderPoint
-    var currentPoint: SliderPoint
-    let step: UInt
-}
-
-struct SliderLocationInfo {
-    let rangePoint: SliderPointLocation
-    var currentPoint: SliderPointLocation
-    let step: UInt
-}
-
 struct FiltersView: View {
     
     let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
     
     @State var sliders: [SliderLocationInfo]
 
+     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Form {
-                    ForEach(0..<sliders.count) { index in
-                        Section(header: Text("\(index + 1)")) {
-                            RangeSlider(metaData: self.sliders[index])
-                        }
+        VStack {
+            Form {
+                ForEach(0..<sliders.count) { index in
+                    Section(header: Text("\(index + 1)")) {
+                        RangeSlider(metaData: self.sliders[index])
                     }
                 }
-                Button(action: {
-                    //action
-                }) {
-                    Text("Применить")
-                }
             }
-            .navigationBarTitle("Фильтры", displayMode: .inline)
-            .navigationBarItems(leading:
             Button(action: {
-                print("button pressed")})
-            {
-                Image("close")
-                .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
-            }, trailing:
-            Button("Сбросить") {
-                //
-            })
+                //action
+            }) {
+                Text("Применить")
+            }
         }
-        
-        .onAppear(perform: loadSliders)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarTitle("Фильтры", displayMode: .inline)
+        .navigationBarItems(leading:
+        Button(action: {
+             self.presentationMode.wrappedValue.dismiss()
+              })
+        {
+            Image("close")
+            .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
+        }, trailing:
+        Button("Сбросить") {
+            self.loadSliders()
+        })
     }
     
     func loadSliders() {
