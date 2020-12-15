@@ -30,7 +30,7 @@
 		C114991E2587DE5900409BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C11499202587DE5900409BF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C13EEF872588D96300362CD1 /* SliderSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderSettings.swift; sourceTree = "<group>"; };
-		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; usesTabs = 0; };
 		C170BA4325880F72003A44C6 /* SliderCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCircle.swift; sourceTree = "<group>"; };
 		C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithLabel.swift; sourceTree = "<group>"; };
 		C1BA14A32588C5EB00B0A226 /* SliderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLine.swift; sourceTree = "<group>"; };

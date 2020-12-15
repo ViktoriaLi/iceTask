@@ -59,23 +59,34 @@ struct FiltersView: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                ForEach(0..<sliders.count) { index in
-                    Section(header: Text("\(index + 1)")) {
-                        RangeSlider(metaData: self.sliders[index])
-                            
+            VStack {
+                Form {
+                    ForEach(0..<sliders.count) { index in
+                        Section(header: Text("\(index + 1)")) {
+                            RangeSlider(metaData: self.sliders[index])
+                        }
                     }
                 }
-                
+                Button(action: {
+                    //action
+                }) {
+                    Text("Применить")
+                }
             }
-
-            Button(action: {
-                //action
-            }) {
-                Text("Применить")
-            }
+            .navigationBarTitle("Фильтры", displayMode: .inline)
+            .navigationBarItems(leading:
+                Button(action: {
+                    print("button pressed")})
+                {
+                    Image("close")
+                    .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
+                })
+            .navigationBarItems(trailing:
+                Button("Сбросить") {
+                    //
+                })
         }
-        .navigationBarTitle(Text("Фильтры"))
+        
         .onAppear(perform: loadSliders)
     }
     

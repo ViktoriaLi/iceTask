@@ -25,11 +25,13 @@ struct RangeSlider: View {
                 Rectangle()
                 .fill(Color.gray.opacity(0.5))
                 .frame(width: totalWidth, height: 3)
+                .offset(x: 15)
                 Rectangle()
                 .fill(Color.blue)
-                    .frame(width: self.metaData.currentPoint.maxValue - self.metaData.currentPoint.minValue, height: 3)
-                    .offset(x: self.metaData.currentPoint.minValue)
-                HStack(spacing: 0) {
+                .frame(width: self.metaData.currentPoint.maxValue - self.metaData.currentPoint.minValue, height: 3)
+                    
+                    .offset(x: self.metaData.currentPoint.minValue + 15)
+                HStack(alignment: .center, spacing: 10) {
                     //CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.minValue), location: self.metaData.currentPoint.minValue)
                     VStack(spacing: 8.0) {
                         Text(SliderLabel.chooseText(for: self.intValue(from: self.metaData.currentPoint.minValue))).font(.system(size: 16))
@@ -52,7 +54,7 @@ struct RangeSlider: View {
                                 .foregroundColor(Color.blue)
                                 .multilineTextAlignment(.trailing)
                             SliderCircle()
-                                .offset(x: self.metaData.currentPoint.maxValue)
+                                .offset(x: self.metaData.currentPoint.maxValue - 52)
                         }
                         .padding(.bottom, 27.0)
                     .gesture(
@@ -63,25 +65,35 @@ struct RangeSlider: View {
                             }
                         }))
                 }
+                .padding(.trailing, 5.0)
+                .frame(width: 100.0)
+                .allowsTightening(false)
+                
+                
             }
         }
+        .onAppear(perform: pr)
         .padding()
         .frame(height: 94.0)
     }
     
+    func pr() {
+        print(totalWidth)
+    }
+    
     private func intValue(from value: CGFloat) -> Int {
-        return Int(value * 30 / (UIScreen.main.bounds.width - 60))
+        return Int(value * 31 / (UIScreen.main.bounds.width - 60))
     }
     
     private func floatValue<T>(from value: T) -> CGFloat {
-        return CGFloat(value as! CGFloat * ((UIScreen.main.bounds.width - 60) / 30))
+        return CGFloat(value as! CGFloat * ((UIScreen.main.bounds.width - 60) / 31))
     }
 }
 
 struct RangeSlider_Previews: PreviewProvider {
     static var previews: some View {
         RangeSlider(metaData: SliderLocationInfo(
-        rangePoint: SliderPointLocation(minValue: 0, maxValue: 30), currentPoint: SliderPointLocation(minValue: 0, maxValue: 30), step: 1))
+        rangePoint: SliderPointLocation(minValue: 0, maxValue: 31), currentPoint: SliderPointLocation(minValue: 0, maxValue: 31), step: 1))
     }
 }
 
