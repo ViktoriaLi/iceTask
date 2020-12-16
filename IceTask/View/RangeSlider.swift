@@ -26,6 +26,8 @@ struct RangeSlider: View {
     let converter = PointConverter()
     let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
 
+   
+    
     var body: some View {
         
         VStack {
@@ -40,7 +42,7 @@ struct RangeSlider: View {
                     .offset(x: self.currentValue.minValue)
                 HStack(alignment: .center, spacing: 10) {
                     //CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.minValue), location: self.metaData.currentPoint.minValue)
-                    Text(SliderLabel.chooseText(for: self.converter.intValue(from: self.currentValue.minValue, step: currentValue.step, width: totalWidth) * self.currentValue.step)).font(.system(size: 16))
+                    Text(SliderLabel.chooseText(for: self.converter.intValue(from: self.currentValue.minValue, step: currentValue.step, width: totalWidth))).font(.system(size: 16))
                             .foregroundColor(Color.blue)
                             .multilineTextAlignment(.leading)
                     Spacer()
@@ -66,7 +68,6 @@ struct RangeSlider: View {
                             DragGesture()
                                 .onChanged({ (value) in
                                     if value.location.x <= self.totalWidth && value.location.x >= self.currentValue.minValue {
-                                        print(value.location.x)
                                         self.currentValue.maxValue = value.location.x
                                         self.updateResetState(value: self.currentValue.maxValue, step: self.currentValue.step, whichCase: .maxValue)
                                     }
@@ -76,6 +77,7 @@ struct RangeSlider: View {
                 .allowsTightening(false)
             }
         }
+        .background(Color.white).edgesIgnoringSafeArea(.all)
         .padding()
         .frame(height: 94.0)
     }

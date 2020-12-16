@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C11499132587DE5300409BF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11499122587DE5300409BF4 /* AppDelegate.swift */; };
 		C11499152587DE5300409BF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11499142587DE5300409BF4 /* SceneDelegate.swift */; };
-		C11499172587DE5300409BF4 /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11499162587DE5300409BF4 /* FiltersView.swift */; };
+		C11499172587DE5300409BF4 /* FiltersEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11499162587DE5300409BF4 /* FiltersEditorView.swift */; };
 		C11499192587DE5900409BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C11499182587DE5900409BF4 /* Assets.xcassets */; };
 		C114991C2587DE5900409BF4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C114991B2587DE5900409BF4 /* Preview Assets.xcassets */; };
 		C114991F2587DE5900409BF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C114991D2587DE5900409BF4 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,8 @@
 		C13EEF912589105D00362CD1 /* SliderPointLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF902589105D00362CD1 /* SliderPointLocation.swift */; };
 		C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF922589106E00362CD1 /* SliderInfo.swift */; };
 		C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF942589108100362CD1 /* SliderLocationInfo.swift */; };
+		C164826C258A3D750016E6F1 /* InitValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164826B258A3D750016E6F1 /* InitValues.swift */; };
+		C1648270258A41100016E6F1 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164826F258A41100016E6F1 /* SectionTitle.swift */; };
 		C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA412587FE38003A44C6 /* RangeSlider.swift */; };
 		C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA4325880F72003A44C6 /* SliderCircle.swift */; };
 		C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A32588C5EB00B0A226 /* SliderLine.swift */; };
@@ -29,7 +31,7 @@
 		C114990F2587DE5300409BF4 /* IceTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IceTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C11499122587DE5300409BF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C11499142587DE5300409BF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C11499162587DE5300409BF4 /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
+		C11499162587DE5300409BF4 /* FiltersEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersEditorView.swift; sourceTree = "<group>"; };
 		C11499182587DE5900409BF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C114991B2587DE5900409BF4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C114991E2587DE5900409BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,8 @@
 		C13EEF902589105D00362CD1 /* SliderPointLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPointLocation.swift; sourceTree = "<group>"; };
 		C13EEF922589106E00362CD1 /* SliderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderInfo.swift; sourceTree = "<group>"; };
 		C13EEF942589108100362CD1 /* SliderLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLocationInfo.swift; sourceTree = "<group>"; };
+		C164826B258A3D750016E6F1 /* InitValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitValues.swift; sourceTree = "<group>"; };
+		C164826F258A41100016E6F1 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; usesTabs = 0; };
 		C170BA4325880F72003A44C6 /* SliderCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCircle.swift; sourceTree = "<group>"; };
 		C1BA14A32588C5EB00B0A226 /* SliderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLine.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				C13EEF902589105D00362CD1 /* SliderPointLocation.swift */,
 				C13EEF922589106E00362CD1 /* SliderInfo.swift */,
 				C13EEF942589108100362CD1 /* SliderLocationInfo.swift */,
+				C164826B258A3D750016E6F1 /* InitValues.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,11 +117,12 @@
 			isa = PBXGroup;
 			children = (
 				C13EEF89258900D100362CD1 /* FiltersValues.swift */,
-				C11499162587DE5300409BF4 /* FiltersView.swift */,
+				C11499162587DE5300409BF4 /* FiltersEditorView.swift */,
 				C170BA412587FE38003A44C6 /* RangeSlider.swift */,
 				C170BA4325880F72003A44C6 /* SliderCircle.swift */,
 				C1BA14A32588C5EB00B0A226 /* SliderLine.swift */,
 				C13EEF872588D96300362CD1 /* SliderSettings.swift */,
+				C164826F258A41100016E6F1 /* SectionTitle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,12 +203,14 @@
 				C11499132587DE5300409BF4 /* AppDelegate.swift in Sources */,
 				C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */,
 				C13EEF8A258900D100362CD1 /* FiltersValues.swift in Sources */,
+				C1648270258A41100016E6F1 /* SectionTitle.swift in Sources */,
 				C13EEF882588D96300362CD1 /* SliderSettings.swift in Sources */,
 				C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */,
 				C11499152587DE5300409BF4 /* SceneDelegate.swift in Sources */,
 				C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */,
 				C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */,
-				C11499172587DE5300409BF4 /* FiltersView.swift in Sources */,
+				C11499172587DE5300409BF4 /* FiltersEditorView.swift in Sources */,
+				C164826C258A3D750016E6F1 /* InitValues.swift in Sources */,
 				C13EEF912589105D00362CD1 /* SliderPointLocation.swift in Sources */,
 				C13EEF8F2589104D00362CD1 /* SliderPoint.swift in Sources */,
 			);

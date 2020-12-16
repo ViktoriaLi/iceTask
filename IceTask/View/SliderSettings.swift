@@ -17,7 +17,6 @@ class PointConverter {
     }
     
     func floatValue(from value: Int, step: Int, width: CGFloat) -> CGFloat {
-        print("sett \(width)")
         var result = CGFloat(value) * ((width / 32.0) * CGFloat(step))
         if result > width {
             result = width
@@ -36,8 +35,9 @@ class SliderSettings {
     
     let converter = PointConverter()
     
-    var defaultValues: [SliderPoint] = [SliderPoint(id: 0, minValue: 1, maxValue: 31, step: 1),
-                SliderPoint(id: 1, minValue: 1, maxValue: 31, step: 2),
+    var defaultValues: [SliderPoint] = [
+                SliderPoint(id: 0, minValue: 0, maxValue: 32, step: 1),
+                SliderPoint(id: 1, minValue: 0, maxValue: 32, step: 2),
                 SliderPoint(id: 2, minValue: 18, maxValue: 20, step: 1),
                 SliderPoint(id: 3, minValue: 7, maxValue: 14, step: 1)]
     

@@ -8,31 +8,12 @@
 
 import SwiftUI
 
-class InitValues: ObservableObject {
-    
-    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
-    
-    @Published var values: [SliderPoint]
-    @Published var valuesCoordinates = [SliderPointLocation]()
-    @Published var changeableValues: [SliderPoint]
-    //@Published var sliders = [SliderLocationInfo]()
-    
-    init() {
-        self.values = sliderManager.defaultValues
-        self.valuesCoordinates = sliderManager.defaultValuesCoordinates
-        self.changeableValues = sliderManager.defaultValues
-        
-        //self.sliders = sliderManager.slidersLocation()
-    }
-}
-
 struct FiltersValues: View {
     
     @ObservedObject var scheme = InitValues()
     
     var body: some View {
         return NavigationView {
-            
             VStack(alignment: .leading, spacing: 20) {
                 ForEach(scheme.changeableValues) { value in
                     Text(self.filterSet(minValue: value.minValue, maxValue: value.maxValue))
@@ -51,13 +32,7 @@ struct FiltersValues: View {
     
     private func filterSet(minValue: Int, maxValue: Int) -> String {
         let textMinValue = "\(minValue) - "
-        let textMaxValue = "\( SliderLabel.chooseText(for: maxValue - 1))"
+        let textMaxValue = "\(SliderLabel.chooseText(for: maxValue - 1))"
         return textMinValue + textMaxValue
-    }
-}
-
-struct FiltersValues_Previews: PreviewProvider {
-    static var previews: some View {
-        FiltersValues()
     }
 }

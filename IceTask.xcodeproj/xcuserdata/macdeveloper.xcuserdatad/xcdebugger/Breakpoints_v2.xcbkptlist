@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E28D1A1C-ACF2-42FF-9D51-DDBA2D3E99C8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IceTask/View/FiltersView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "choosenSliders"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "0A4E5578-B63B-43C9-AB7F-07692168E23A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -30,42 +14,10 @@
             filePath = "IceTask/View/FiltersView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "body"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "0A4E5578-B63B-43C9-AB7F-07692168E23A - 97d6745373a39a5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "IceTask.FiltersEditorView.body.getter : some"
-                  moduleName = "IceTask"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macdeveloper/Documents/Vika/swift_learning/IceTask/IceTask/View/FiltersView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "1620">
-               </Location>
-               <Location
-                  uuid = "0A4E5578-B63B-43C9-AB7F-07692168E23A - 53353707193ef3a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #4 () -&gt; () in IceTask.FiltersEditorView.body.getter : some"
-                  moduleName = "IceTask"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/macdeveloper/Documents/Vika/swift_learning/IceTask/IceTask/View/FiltersView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "63">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
