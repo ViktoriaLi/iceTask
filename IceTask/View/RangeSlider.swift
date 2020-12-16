@@ -13,7 +13,7 @@ struct Constant {
 import SwiftUI
 
 struct RangeSlider: View {
-    @State var metaData: SliderLocationInfo
+    @Binding var metaData: SliderLocationInfo
     @Binding var currentValue: SliderPointLocation
     
     var totalWidth = UIScreen.main.bounds.width - 60

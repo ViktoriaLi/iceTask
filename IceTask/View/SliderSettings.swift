@@ -43,7 +43,26 @@ class SliderSettings {
     }
     
     func convertToCoordinate(point: SliderPoint) -> SliderPointLocation {
-        return SliderPointLocation(minValue: floatValue(from: point.minValue, step: point.step), maxValue: floatValue(from: point.maxValue, step: point.step))
+        return SliderPointLocation(id: point.id, minValue: floatValue(from: point.minValue, step: point.step), maxValue: floatValue(from: point.maxValue, step: point.step), step: point.step)
+    }
+    
+    func currentIntValues(values: [SliderPointLocation]) -> [SliderPoint] {
+        var result = [SliderPoint]()
+        for value in values {
+            let newPoint = convertToInt(from: value)
+            result.append(newPoint)
+        }
+        return result
+    }
+    
+    func convertToInt(from value: SliderPointLocation) -> SliderPoint {
+        return SliderPoint(id: value.id, minValue: intValue(from: value.minValue, step: value.step), maxValue: intValue(from: value.maxValue, step: value.step), step: value.step)
+        
+    }
+    
+    func intValue(from float: CGFloat, step: Int) -> Int {
+        let unit: CGFloat = (float / CGFloat(step)) * 32
+        return Int(unit / width)
     }
     
     func floatValue(from value: Int, step: Int) -> CGFloat {

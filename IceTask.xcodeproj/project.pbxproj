@@ -22,7 +22,6 @@
 		C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF942589108100362CD1 /* SliderLocationInfo.swift */; };
 		C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA412587FE38003A44C6 /* RangeSlider.swift */; };
 		C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA4325880F72003A44C6 /* SliderCircle.swift */; };
-		C1BA14A22588BEF500B0A226 /* CircleWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */; };
 		C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A32588C5EB00B0A226 /* SliderLine.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +43,6 @@
 		C13EEF942589108100362CD1 /* SliderLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLocationInfo.swift; sourceTree = "<group>"; };
 		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; usesTabs = 0; };
 		C170BA4325880F72003A44C6 /* SliderCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCircle.swift; sourceTree = "<group>"; };
-		C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithLabel.swift; sourceTree = "<group>"; };
 		C1BA14A32588C5EB00B0A226 /* SliderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +115,6 @@
 				C11499162587DE5300409BF4 /* FiltersView.swift */,
 				C170BA412587FE38003A44C6 /* RangeSlider.swift */,
 				C170BA4325880F72003A44C6 /* SliderCircle.swift */,
-				C1BA14A12588BEF500B0A226 /* CircleWithLabel.swift */,
 				C1BA14A32588C5EB00B0A226 /* SliderLine.swift */,
 				C13EEF872588D96300362CD1 /* SliderSettings.swift */,
 			);
@@ -199,7 +196,6 @@
 				C13EEF8D2589103700362CD1 /* SliderLabel.swift in Sources */,
 				C11499132587DE5300409BF4 /* AppDelegate.swift in Sources */,
 				C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */,
-				C1BA14A22588BEF500B0A226 /* CircleWithLabel.swift in Sources */,
 				C13EEF8A258900D100362CD1 /* FiltersValues.swift in Sources */,
 				C13EEF882588D96300362CD1 /* SliderSettings.swift in Sources */,
 				C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */,

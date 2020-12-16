@@ -10,6 +10,8 @@ import Foundation
 import SwiftUI
 
 struct SliderPointLocation: Equatable {
+    var id: Int
     var minValue: CGFloat
     var maxValue: CGFloat
+    var step: Int
 }

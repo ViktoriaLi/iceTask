@@ -10,8 +10,9 @@ import SwiftUI
 
 struct FiltersEditorView: View {
     
-    @State var sliders: [SliderLocationInfo]
-    @State var choosenSliders: [SliderPointLocation]
+    @Binding var sliders: [SliderLocationInfo]
+    @Binding var choosenSliders: [SliderPointLocation]
+    @Binding var choosenSlidersInt: [SliderPoint]
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -26,12 +27,13 @@ struct FiltersEditorView: View {
                         //.foregroundColor(.black)
                         //.alignmentGuide(.center)
                         .font(.system(size: 17))) {
-                        RangeSlider(metaData: self.sliders[index], currentValue: self.$choosenSliders[index])
+                        RangeSlider(metaData: self.$sliders[index], currentValue: self.$choosenSliders[index])
                     }
                 }
             }
             Button(action: {
-                //action
+                self.updateValues()
+                self.presentationMode.wrappedValue.dismiss()
             }) {
                 Text("Применить")
             }
@@ -47,21 +49,23 @@ struct FiltersEditorView: View {
             .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
         }, trailing:
         Button("Сбросить") {
-            self.loadSliders()
+            self.resetSliders()
         })
     }
     
-    func loadSliders() {
-         //sliders = sliderManager.slidersLocation()
-        //var defaultValues = sliders.map({$0.currentPoint})
+    func updateValues() {
+        choosenSlidersInt = sliderManager.currentIntValues(values: choosenSliders)
+    }
+    
+    func resetSliders() {
         choosenSliders = sliders.map({$0.currentPoint})
     }
 }
 
-struct FiltersEditorView_Previews: PreviewProvider {
+/*struct FiltersEditorView_Previews: PreviewProvider {
     static var previews: some View {
         FiltersEditorView(sliders: [], choosenSliders: [])
     }
-}
+}*/
 
 
