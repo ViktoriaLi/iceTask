@@ -10,6 +10,6 @@ import Foundation
 
 struct SliderLocationInfo {
     let rangePoint: SliderPointLocation
-    var currentPoint: SliderPointLocation
+    var defaultPoint: SliderPointLocation
     let step: Int
 }

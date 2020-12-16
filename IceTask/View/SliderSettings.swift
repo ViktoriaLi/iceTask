@@ -16,17 +16,22 @@ class SliderSettings {
     init(width: CGFloat) {
         self.width = width - 15
     }
+    
+    var defaultValues: [SliderPoint] { 
+        return [SliderPoint(id: 0, minValue: 0, maxValue: 31, step: 1), SliderPoint(id: 1, minValue: 0, maxValue: 31, step: 2), SliderPoint(id: 2, minValue: 18, maxValue: 20, step: 1), SliderPoint(id: 3, minValue: 7, maxValue: 14, step: 1)]
+    }
+    
     var slidersMeta: [SliderInfo] = [SliderInfo(rangePoint: SliderPoint(id: 0, minValue: 0, maxValue: 31, step: 1), defaultPoint: SliderPoint(id: 0, minValue: 0, maxValue: 31, step: 1), step: 1),
-                                     SliderInfo(rangePoint: SliderPoint(id: 1, minValue: 0, maxValue: 31, step: 2), defaultPoint: SliderPoint(id: 1, minValue: 0, maxValue: 31, step: 2), step: 2),
-                                     SliderInfo(rangePoint: SliderPoint(id: 2, minValue: 0, maxValue: 31, step: 1), defaultPoint: SliderPoint(id: 2, minValue: 18, maxValue: 20, step: 1), step: 1),
-                                     SliderInfo(rangePoint: SliderPoint(id: 3, minValue: 0, maxValue: 31, step: 1), defaultPoint: SliderPoint(id: 3, minValue: 7, maxValue: 14, step: 1), step: 1)]
+        SliderInfo(rangePoint: SliderPoint(id: 1, minValue: 0, maxValue: 31, step: 2), defaultPoint: SliderPoint(id: 1, minValue: 0, maxValue: 31, step: 2), step: 2),
+        SliderInfo(rangePoint: SliderPoint(id: 2, minValue: 0, maxValue: 31, step: 1), defaultPoint: SliderPoint(id: 2, minValue: 18, maxValue: 20, step: 1), step: 1),
+        SliderInfo(rangePoint: SliderPoint(id: 3, minValue: 0, maxValue: 31, step: 1), defaultPoint: SliderPoint(id: 3, minValue: 7, maxValue: 14, step: 1), step: 1)]
     
     func slidersLocation() -> [SliderLocationInfo] {
         var resultArray = [SliderLocationInfo]()
         
         for slider in slidersMeta {
             let newSlider = SliderLocationInfo(
-                rangePoint: convertToCoordinate(point: slider.rangePoint), currentPoint: convertToCoordinate(point: slider.defaultPoint), step: slider.step)
+                rangePoint: convertToCoordinate(point: slider.rangePoint), defaultPoint: convertToCoordinate(point: slider.defaultPoint), step: slider.step)
             print(newSlider)
             resultArray.append(newSlider)
         }
@@ -62,7 +67,7 @@ class SliderSettings {
     
     func intValue(from float: CGFloat, step: Int) -> Int {
         let unit: CGFloat = (float / CGFloat(step)) * 32
-        return Int(unit / width)
+        return Int(unit / width) * step
     }
     
     func floatValue(from value: Int, step: Int) -> CGFloat {

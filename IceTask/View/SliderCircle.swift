@@ -18,7 +18,6 @@ struct SliderCircle: View {
             .frame(width: 31, height: 31)
             .aspectRatio(contentMode: .fill)
             .shadow(color: Color("circleShadow"), radius: 7, x: 0, y: 3)
-        
     }
 }
 

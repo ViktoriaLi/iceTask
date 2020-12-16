@@ -16,6 +16,8 @@ struct RangeSlider: View {
     @Binding var metaData: SliderLocationInfo
     @Binding var currentValue: SliderPointLocation
     
+    @Binding var resetAllowed: Bool
+    
     var totalWidth = UIScreen.main.bounds.width - 60
     
     var body: some View {
@@ -50,6 +52,11 @@ struct RangeSlider: View {
                                 .onChanged({ (value) in
                                     if value.location.x >= 0 && value.location.x <= self.currentValue.maxValue && value.location.x <= self.totalWidth {
                                         self.currentValue.minValue = value.location.x
+                                        if self.intValue(from: self.currentValue.minValue) != self.intValue(from: self.metaData.defaultPoint.minValue) {
+                                            self.resetAllowed = true
+                                        } else {
+                                            self.resetAllowed = false
+                                        }
                                     }
                                 }))
                     SliderCircle()
@@ -60,6 +67,11 @@ struct RangeSlider: View {
                                     if value.location.x <= self.totalWidth && value.location.x >= self.currentValue.minValue {
                                         print(value.location.x)
                                         self.currentValue.maxValue = value.location.x
+                                        if self.intValue(from: self.currentValue.maxValue) != self.intValue(from: self.metaData.defaultPoint.maxValue) {
+                                            self.resetAllowed = true
+                                        } else {
+                                            self.resetAllowed = false
+                                        }
                                     }
                                 }))
                 }
@@ -73,7 +85,7 @@ struct RangeSlider: View {
     
     private func intValue(from value: CGFloat) -> Int {
         let unit: CGFloat = (value / CGFloat(metaData.step)) * 32
-        return Int(unit / totalWidth)
+        return Int(unit / totalWidth) * metaData.step
     }
 }
 

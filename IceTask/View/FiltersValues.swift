@@ -12,13 +12,13 @@ class InitValues: ObservableObject {
     
     let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
     
-    @Published var values = [SliderPoint(id: 0, minValue: 0, maxValue: 31, step: 1), SliderPoint(id: 1, minValue: 0, maxValue: 31, step: 2), SliderPoint(id: 2, minValue: 18, maxValue: 20, step: 1), SliderPoint(id: 3, minValue: 7, maxValue: 14, step: 1)]
-    
+    @Published var values: [SliderPoint]
     @Published var valuesCoordinates = [SliderPointLocation]()
     
     @Published var sliders = [SliderLocationInfo]()
     
     init() {
+        self.values = sliderManager.defaultValues
         self.valuesCoordinates = sliderManager.currentCoordinates(values: values)
         self.sliders = sliderManager.slidersLocation()
     }

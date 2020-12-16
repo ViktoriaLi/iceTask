@@ -13,4 +13,8 @@ struct SliderPoint: Equatable, Identifiable {
     var minValue: Int
     var maxValue: Int
     var step: Int
+    
+    static func ==(lhs: SliderPoint, rhs: SliderPoint) -> Bool {
+        return lhs.id == rhs.id && lhs.minValue == rhs.minValue && lhs.maxValue == rhs.maxValue
+    }
 }

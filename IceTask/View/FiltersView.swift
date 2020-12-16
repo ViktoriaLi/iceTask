@@ -11,11 +11,24 @@ import SwiftUI
 struct FiltersEditorView: View {
     
     @Binding var sliders: [SliderLocationInfo]
-    @Binding var choosenSliders: [SliderPointLocation]
+    @Binding var choosenSliders: [SliderPointLocation] {
+        didSet {
+            let defaultPoints = sliderManager.defaultValues
+            let currentPoints = sliderManager.currentIntValues(values: choosenSliders)
+            if defaultPoints == currentPoints {
+                resetAllowed.append(false)
+            } else {
+                resetAllowed.append(true)
+            }
+        }
+    }
+    
     @Binding var choosenSlidersInt: [SliderPoint]
     
     @Environment(\.presentationMode) var presentationMode
     
+    @State private var resetAllowed = [Bool]()
+        
     let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
     
     var body: some View {
@@ -23,11 +36,13 @@ struct FiltersEditorView: View {
             Form {
                 
                 ForEach(0..<sliders.count) { index in
+
                     Section(header: Text("\(index + 1)")
                         //.foregroundColor(.black)
                         //.alignmentGuide(.center)
+                        
                         .font(.system(size: 17))) {
-                        RangeSlider(metaData: self.$sliders[index], currentValue: self.$choosenSliders[index])
+                            RangeSlider(metaData: self.$sliders[index], currentValue: self.$choosenSliders[index], resetAllowed: self.$resetAllowed[index])
                     }
                 }
             }
@@ -38,6 +53,7 @@ struct FiltersEditorView: View {
                 Text("Применить")
             }
         }
+        .onAppear(perform: addResetTrigger)
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("Фильтры", displayMode: .inline)
         .navigationBarItems(leading:
@@ -50,7 +66,7 @@ struct FiltersEditorView: View {
         }, trailing:
         Button("Сбросить") {
             self.resetSliders()
-        })
+        }.disabled(!resetAllowed.contains(true)))
     }
     
     func updateValues() {
@@ -58,7 +74,20 @@ struct FiltersEditorView: View {
     }
     
     func resetSliders() {
-        choosenSliders = sliders.map({$0.currentPoint})
+        choosenSliders = sliders.map({$0.defaultPoint})
+    }
+    
+    func addResetTrigger() {
+        for index in 0..<choosenSliders.count {
+            let intCurrent = sliderManager.convertToInt(from: choosenSliders[index])
+            print(intCurrent)
+            print(sliderManager.defaultValues[index])
+            if intCurrent == sliderManager.defaultValues[index] {
+                resetAllowed.append(false)
+            } else {
+               resetAllowed.append(true)
+           }
+        }
     }
 }
 
