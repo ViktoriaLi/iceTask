@@ -26,8 +26,6 @@ struct RangeSlider: View {
     let converter = PointConverter()
     let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
 
-   
-    
     var body: some View {
         
         VStack {
@@ -77,7 +75,6 @@ struct RangeSlider: View {
                 .allowsTightening(false)
             }
         }
-        .background(Color.white).edgesIgnoringSafeArea(.all)
         .padding()
         .frame(height: 94.0)
     }

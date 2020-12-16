@@ -42,14 +42,16 @@ struct FiltersEditorView: View {
     var body: some View {
         VStack {
             Form {
-                ForEach(0..<choosenSliders.count) { index in
-                    Section(header:
-                        SectionTitle(index: index)
-                            .foregroundColor(.black)
-                            .font(.system(size: 17)),
-                            footer: (index == self.choosenSliders.count - 1) ? self.footer : nil) {
-                                RangeSlider(currentValue: self.$choosenSliders[index], resetAllowed: self.$resetAllowed[index])
+                ForEach(0..<choosenSliders.count - 1) { index in
+                    Section(
+                    header: SectionTitle(index: index)) {
+                        RangeSlider(currentValue: self.$choosenSliders[index], resetAllowed: self.$resetAllowed[index])
                     }
+                }
+                Section(
+                    header: SectionTitle(index: choosenSliders.count - 1),
+                    footer: self.footer) {
+                        RangeSlider(currentValue: self.$choosenSliders[choosenSliders.count - 1], resetAllowed: self.$resetAllowed[choosenSliders.count - 1])
                 }
             }
         }
