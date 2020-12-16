@@ -20,9 +20,3 @@ struct SliderCircle: View {
             .shadow(color: Color("circleShadow"), radius: 7, x: 0, y: 3)
     }
 }
-
-struct SliderCircle_Previews: PreviewProvider {
-    static var previews: some View {
-        SliderCircle()
-    }
-}

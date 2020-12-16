@@ -33,13 +33,13 @@ class SliderSettings {
         self.width = width - 15
     }
     
-    let converter = PointConverter()
+    private let converter = PointConverter()
     
     var defaultValues: [SliderPoint] = [
                 SliderPoint(id: 0, minValue: 0, maxValue: 32, step: 1),
                 SliderPoint(id: 1, minValue: 0, maxValue: 32, step: 2),
-                SliderPoint(id: 2, minValue: 18, maxValue: 20, step: 1),
-                SliderPoint(id: 3, minValue: 7, maxValue: 14, step: 1)]
+                SliderPoint(id: 2, minValue: 17, maxValue: 20, step: 1),
+                SliderPoint(id: 3, minValue: 6, maxValue: 14, step: 1)]
     
     var defaultValuesCoordinates: [SliderPointLocation] {
         return coordinatesArray(values: defaultValues)
@@ -69,7 +69,5 @@ class SliderSettings {
     
     func convertToInt(from value: SliderPointLocation) -> SliderPoint {
         return SliderPoint(id: value.id, minValue: converter.intValue(from: value.minValue, step: value.step, width: width), maxValue: converter.intValue(from: value.maxValue, step: value.step, width: width), step: value.step)
-        
     }
-    
 }

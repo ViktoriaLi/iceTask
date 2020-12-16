@@ -24,7 +24,9 @@
 		C1648270258A41100016E6F1 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164826F258A41100016E6F1 /* SectionTitle.swift */; };
 		C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA412587FE38003A44C6 /* RangeSlider.swift */; };
 		C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA4325880F72003A44C6 /* SliderCircle.swift */; };
-		C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A32588C5EB00B0A226 /* SliderLine.swift */; };
+		C1BA14A42588C5EB00B0A226 /* SliderLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A32588C5EB00B0A226 /* SliderLabels.swift */; };
+		C1FCAD7E258AAA44006908D6 /* BlueButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCAD7D258AAA44006908D6 /* BlueButtonStyle.swift */; };
+		C1FCAD82258AAAF2006908D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCAD81258AAAF2006908D6 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +49,9 @@
 		C164826F258A41100016E6F1 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; usesTabs = 0; };
 		C170BA4325880F72003A44C6 /* SliderCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderCircle.swift; sourceTree = "<group>"; };
-		C1BA14A32588C5EB00B0A226 /* SliderLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLine.swift; sourceTree = "<group>"; };
+		C1BA14A32588C5EB00B0A226 /* SliderLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLabels.swift; sourceTree = "<group>"; };
+		C1FCAD7D258AAA44006908D6 /* BlueButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButtonStyle.swift; sourceTree = "<group>"; };
+		C1FCAD81258AAAF2006908D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				C13EEF922589106E00362CD1 /* SliderInfo.swift */,
 				C13EEF942589108100362CD1 /* SliderLocationInfo.swift */,
 				C164826B258A3D750016E6F1 /* InitValues.swift */,
+				C1FCAD81258AAAF2006908D6 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,9 +125,10 @@
 				C11499162587DE5300409BF4 /* FiltersEditorView.swift */,
 				C170BA412587FE38003A44C6 /* RangeSlider.swift */,
 				C170BA4325880F72003A44C6 /* SliderCircle.swift */,
-				C1BA14A32588C5EB00B0A226 /* SliderLine.swift */,
+				C1BA14A32588C5EB00B0A226 /* SliderLabels.swift */,
 				C13EEF872588D96300362CD1 /* SliderSettings.swift */,
 				C164826F258A41100016E6F1 /* SectionTitle.swift */,
+				C1FCAD7D258AAA44006908D6 /* BlueButtonStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -199,13 +205,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */,
+				C1FCAD82258AAAF2006908D6 /* Constants.swift in Sources */,
 				C13EEF8D2589103700362CD1 /* SliderLabel.swift in Sources */,
 				C11499132587DE5300409BF4 /* AppDelegate.swift in Sources */,
 				C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */,
 				C13EEF8A258900D100362CD1 /* FiltersValues.swift in Sources */,
+				C1FCAD7E258AAA44006908D6 /* BlueButtonStyle.swift in Sources */,
 				C1648270258A41100016E6F1 /* SectionTitle.swift in Sources */,
 				C13EEF882588D96300362CD1 /* SliderSettings.swift in Sources */,
-				C1BA14A42588C5EB00B0A226 /* SliderLine.swift in Sources */,
+				C1BA14A42588C5EB00B0A226 /* SliderLabels.swift in Sources */,
 				C11499152587DE5300409BF4 /* SceneDelegate.swift in Sources */,
 				C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */,
 				C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */,

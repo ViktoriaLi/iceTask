@@ -22,18 +22,10 @@ struct FiltersEditorView: View {
     var footer: some View {
         VStack(alignment: .center) {
                 Button(action: self.updateValues) {
-                    VStack(alignment: .center) {
-                        Text("ПРИМЕНИТЬ")
-                        .fontWeight(.bold)
-                        .font(.system(size: 16))
-                    }
-                    .frame(width: UIScreen.main.bounds.width - 60, alignment: .center)
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(Color.white)
-                        .cornerRadius(10)
-                        .shadow(color: Color("buttonShadow"), radius: 10, x: 0, y: 0)
-                }
+                    Text("ПРИМЕНИТЬ")
+                    .fontWeight(.bold)
+                    .font(.system(size: 16))
+                }.buttonStyle(BlueButtonStyle())
             .padding(.bottom, 25)
             .padding(.top, 50)
         }
@@ -60,10 +52,11 @@ struct FiltersEditorView: View {
         .navigationBarTitle("Фильтры", displayMode: .inline)
         .navigationBarItems(leading:
             Button(action: {
+                self.resetSliders()
                 self.presentationMode.wrappedValue.dismiss()
             }){
                 Image("close")
-                    .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
+                .renderingMode(Image.TemplateRenderingMode?.init(Image.TemplateRenderingMode.original))
             }, trailing:
             Button("Сбросить") {
                 self.resetSliders()
@@ -89,27 +82,4 @@ struct FiltersEditorView: View {
            }
         }
     }
-}
-
-
-struct BlueButtonStyle: ButtonStyle {
-
-  func makeBody(configuration: Self.Configuration) -> some View {
-    configuration.label
-        .font(.headline)
-        //.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        //.frame(height: 50, alignment: .center)
-        //.contentShape(Rectangle())
-        //.padding(16)
-        //.cornerRadius(10)
-        .foregroundColor(configuration.isPressed ? Color.white.opacity(0.5) : Color.white)
-        .listRowBackground(configuration.isPressed ? Color.blue.opacity(0.5) : Color.blue)
-    /*.foregroundColor(.white)
-    .fontWeight(.bold)
-    .font(.system(size: 16))
-    .background(Color.blue)
-    .
-    .
-    .frame(height: 50)*/
-  }
 }
