@@ -12,4 +12,5 @@ struct SliderPoint: Equatable, Identifiable {
     var id: Int
     var minValue: Int
     var maxValue: Int
+    var step: Int
 }

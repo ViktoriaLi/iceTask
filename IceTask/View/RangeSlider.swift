@@ -14,7 +14,7 @@ import SwiftUI
 
 struct RangeSlider: View {
     @State var metaData: SliderLocationInfo
-    @State var currentValue: SliderPointLocation
+    @Binding var currentValue: SliderPointLocation
     
     var totalWidth = UIScreen.main.bounds.width - 60
     
@@ -33,7 +33,7 @@ struct RangeSlider: View {
                     .offset(x: self.currentValue.minValue)
                 HStack(alignment: .center, spacing: 10) {
                     //CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.minValue), location: self.metaData.currentPoint.minValue)
-                        Text(SliderLabel.chooseText(for: self.intValue(from: self.currentValue.minValue))).font(.system(size: 16))
+                    Text(SliderLabel.chooseText(for: self.intValue(from: self.currentValue.minValue) * metaData.step)).font(.system(size: 16))
                             .foregroundColor(Color.blue)
                             .multilineTextAlignment(.leading)
                     Spacer()
@@ -53,43 +53,34 @@ struct RangeSlider: View {
                                     }
                                 }))
                     SliderCircle()
-                        .offset(x: self.currentValue.maxValue - 50)
+                        .offset(x: self.currentValue.maxValue - 46)
                         .gesture(
                             DragGesture()
                                 .onChanged({ (value) in
-                                    if value.location.x <= self.totalWidth + 62 && value.location.x >= self.currentValue.minValue {
+                                    if value.location.x <= self.totalWidth && value.location.x >= self.currentValue.minValue {
                                         print(value.location.x)
                                         self.currentValue.maxValue = value.location.x
                                     }
                                 }))
                 }
-                //.padding(.trailing, 5.0)
-                //.frame(width: 100.0)
+
                 .allowsTightening(false)
             }
         }
-        .onAppear(perform: pr)
         .padding()
         .frame(height: 94.0)
     }
     
-    func pr() {
-        print(totalWidth)
-    }
-    
     private func intValue(from value: CGFloat) -> Int {
-        return Int(value * 32 / (UIScreen.main.bounds.width - 60))
-    }
-    
-    private func floatValue<T>(from value: T) -> CGFloat {
-        return CGFloat(value as! CGFloat * ((UIScreen.main.bounds.width - 60) / 31))
+        let unit: CGFloat = (value / CGFloat(metaData.step)) * 32
+        return Int(unit / totalWidth)
     }
 }
 
-struct RangeSlider_Previews: PreviewProvider {
+/*struct RangeSlider_Previews: PreviewProvider {
     static var previews: some View {
         RangeSlider(metaData: SliderLocationInfo(
             rangePoint: SliderPointLocation(minValue: 0, maxValue: 31), currentPoint: SliderPointLocation(minValue: 0, maxValue: 31), step: 1), currentValue: SliderPointLocation(minValue: 0, maxValue: 31))
     }
-}
+}*/
 

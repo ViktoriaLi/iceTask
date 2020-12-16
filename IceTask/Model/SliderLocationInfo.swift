@@ -11,5 +11,5 @@ import Foundation
 struct SliderLocationInfo {
     let rangePoint: SliderPointLocation
     var currentPoint: SliderPointLocation
-    let step: UInt
+    let step: Int
 }

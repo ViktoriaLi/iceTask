@@ -26,7 +26,7 @@ struct FiltersEditorView: View {
                         //.foregroundColor(.black)
                         //.alignmentGuide(.center)
                         .font(.system(size: 17))) {
-                        RangeSlider(metaData: self.sliders[index], currentValue: self.choosenSliders[index])
+                        RangeSlider(metaData: self.sliders[index], currentValue: self.$choosenSliders[index])
                     }
                 }
             }
@@ -52,16 +52,16 @@ struct FiltersEditorView: View {
     }
     
     func loadSliders() {
-         sliders = sliderManager.slidersLocation()
+         //sliders = sliderManager.slidersLocation()
         //var defaultValues = sliders.map({$0.currentPoint})
         choosenSliders = sliders.map({$0.currentPoint})
     }
 }
 
-/*struct FiltersEditorView_Previews: PreviewProvider {
+struct FiltersEditorView_Previews: PreviewProvider {
     static var previews: some View {
         FiltersEditorView(sliders: [], choosenSliders: [])
     }
-}*/
+}
 
 
