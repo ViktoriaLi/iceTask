@@ -14,13 +14,15 @@ class InitValues: ObservableObject {
     
     @Published var values: [SliderPoint]
     @Published var valuesCoordinates = [SliderPointLocation]()
-    
-    @Published var sliders = [SliderLocationInfo]()
+    @Published var changeableValues: [SliderPoint]
+    //@Published var sliders = [SliderLocationInfo]()
     
     init() {
         self.values = sliderManager.defaultValues
-        self.valuesCoordinates = sliderManager.currentCoordinates(values: values)
-        self.sliders = sliderManager.slidersLocation()
+        self.valuesCoordinates = sliderManager.defaultValuesCoordinates
+        self.changeableValues = sliderManager.defaultValues
+        
+        //self.sliders = sliderManager.slidersLocation()
     }
 }
 
@@ -32,11 +34,11 @@ struct FiltersValues: View {
         return NavigationView {
             
             VStack(alignment: .leading, spacing: 20) {
-                ForEach(scheme.values) { value in
+                ForEach(scheme.changeableValues) { value in
                     Text(self.filterSet(minValue: value.minValue, maxValue: value.maxValue))
                     Divider()
                 }
-                NavigationLink(destination: FiltersEditorView(sliders: $scheme.sliders, choosenSliders: $scheme.valuesCoordinates, choosenSlidersInt: $scheme.values)) {
+                NavigationLink(destination: FiltersEditorView(choosenSliders: $scheme.valuesCoordinates, choosenSlidersInt: $scheme.changeableValues)) {
                     Text("Изменить")
                         .foregroundColor(.blue)
                 }.buttonStyle(PlainButtonStyle())

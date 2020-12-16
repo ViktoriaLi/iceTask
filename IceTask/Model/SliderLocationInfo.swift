@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct SliderLocationInfo {
+/*struct SliderLocationInfo {
     let rangePoint: SliderPointLocation
     var defaultPoint: SliderPointLocation
     let step: Int
-}
+}*/

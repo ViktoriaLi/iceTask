@@ -10,16 +10,22 @@ struct Constant {
     
 }
 
+enum Value: String {
+    case minValue = "minValue"
+    case maxValue = "maxValue"
+}
+
 import SwiftUI
 
 struct RangeSlider: View {
-    @Binding var metaData: SliderLocationInfo
     @Binding var currentValue: SliderPointLocation
-    
     @Binding var resetAllowed: Bool
     
     var totalWidth = UIScreen.main.bounds.width - 60
     
+    let converter = PointConverter()
+    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
+
     var body: some View {
         
         VStack {
@@ -28,18 +34,17 @@ struct RangeSlider: View {
                 Rectangle()
                     .fill(Color.gray.opacity(0.5))
                     .frame(width: totalWidth, height: 3)
-                //.offset(x: 15)
                 Rectangle()
                     .fill(Color.blue)
                     .frame(width: self.currentValue.maxValue - self.currentValue.minValue, height: 3)
                     .offset(x: self.currentValue.minValue)
                 HStack(alignment: .center, spacing: 10) {
                     //CircleWithLabel(value: self.intValue(from: self.metaData.currentPoint.minValue), location: self.metaData.currentPoint.minValue)
-                    Text(SliderLabel.chooseText(for: self.intValue(from: self.currentValue.minValue) * metaData.step)).font(.system(size: 16))
+                    Text(SliderLabel.chooseText(for: self.converter.intValue(from: self.currentValue.minValue, step: currentValue.step, width: totalWidth) * self.currentValue.step)).font(.system(size: 16))
                             .foregroundColor(Color.blue)
                             .multilineTextAlignment(.leading)
                     Spacer()
-                        Text(SliderLabel.chooseText(for: self.intValue(from: self.currentValue.maxValue))).font(.system(size: 16))
+                    Text(SliderLabel.chooseText(for: self.converter.intValue(from: self.currentValue.maxValue, step: currentValue.step, width: totalWidth))).font(.system(size: 16))
                             .foregroundColor(Color.blue)
                             .multilineTextAlignment(.trailing)
                 }
@@ -52,11 +57,7 @@ struct RangeSlider: View {
                                 .onChanged({ (value) in
                                     if value.location.x >= 0 && value.location.x <= self.currentValue.maxValue && value.location.x <= self.totalWidth {
                                         self.currentValue.minValue = value.location.x
-                                        if self.intValue(from: self.currentValue.minValue) != self.intValue(from: self.metaData.defaultPoint.minValue) {
-                                            self.resetAllowed = true
-                                        } else {
-                                            self.resetAllowed = false
-                                        }
+                                        self.updateResetState(value: self.currentValue.minValue, step: self.currentValue.step, whichCase: .minValue)
                                     }
                                 }))
                     SliderCircle()
@@ -67,11 +68,7 @@ struct RangeSlider: View {
                                     if value.location.x <= self.totalWidth && value.location.x >= self.currentValue.minValue {
                                         print(value.location.x)
                                         self.currentValue.maxValue = value.location.x
-                                        if self.intValue(from: self.currentValue.maxValue) != self.intValue(from: self.metaData.defaultPoint.maxValue) {
-                                            self.resetAllowed = true
-                                        } else {
-                                            self.resetAllowed = false
-                                        }
+                                        self.updateResetState(value: self.currentValue.maxValue, step: self.currentValue.step, whichCase: .maxValue)
                                     }
                                 }))
                 }
@@ -83,9 +80,17 @@ struct RangeSlider: View {
         .frame(height: 94.0)
     }
     
-    private func intValue(from value: CGFloat) -> Int {
-        let unit: CGFloat = (value / CGFloat(metaData.step)) * 32
-        return Int(unit / totalWidth) * metaData.step
+    func updateResetState(value: CGFloat, step: Int, whichCase: Value) {
+        let defaultPosition = sliderManager.defaultValues[self.currentValue.id]
+        var valueToCompare = defaultPosition.minValue
+        if whichCase == .maxValue {
+            valueToCompare = defaultPosition.maxValue
+        }
+        if self.converter.intValue(from: value, step: step, width: self.totalWidth) != valueToCompare {
+            self.resetAllowed = true
+        } else {
+            self.resetAllowed = false
+        }
     }
 }
 

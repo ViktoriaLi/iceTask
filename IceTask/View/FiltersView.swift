@@ -9,8 +9,7 @@
 import SwiftUI
 
 struct FiltersEditorView: View {
-    
-    @Binding var sliders: [SliderLocationInfo]
+        
     @Binding var choosenSliders: [SliderPointLocation] {
         didSet {
             let defaultPoints = sliderManager.defaultValues
@@ -35,14 +34,14 @@ struct FiltersEditorView: View {
         VStack {
             Form {
                 
-                ForEach(0..<sliders.count) { index in
+                ForEach(0..<choosenSliders.count) { index in
 
                     Section(header: Text("\(index + 1)")
                         //.foregroundColor(.black)
                         //.alignmentGuide(.center)
                         
                         .font(.system(size: 17))) {
-                            RangeSlider(metaData: self.$sliders[index], currentValue: self.$choosenSliders[index], resetAllowed: self.$resetAllowed[index])
+                            RangeSlider(currentValue: self.$choosenSliders[index], resetAllowed: self.$resetAllowed[index])
                     }
                 }
             }
@@ -74,7 +73,7 @@ struct FiltersEditorView: View {
     }
     
     func resetSliders() {
-        choosenSliders = sliders.map({$0.defaultPoint})
+        choosenSliders = sliderManager.defaultValuesCoordinates
     }
     
     func addResetTrigger() {
