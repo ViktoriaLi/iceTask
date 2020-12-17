@@ -18,7 +18,9 @@ struct SectionTitle: View {
             Text("\(index + 1)")
             .foregroundColor(.black)
             .font(.system(size: 17))
+            .fontWeight(.bold)
             .frame(height: 34)
+            
         }
         
     }

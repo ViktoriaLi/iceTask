@@ -19,7 +19,6 @@
 		C13EEF8F2589104D00362CD1 /* SliderPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF8E2589104D00362CD1 /* SliderPoint.swift */; };
 		C13EEF912589105D00362CD1 /* SliderPointLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF902589105D00362CD1 /* SliderPointLocation.swift */; };
 		C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF922589106E00362CD1 /* SliderInfo.swift */; };
-		C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13EEF942589108100362CD1 /* SliderLocationInfo.swift */; };
 		C164826C258A3D750016E6F1 /* InitValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164826B258A3D750016E6F1 /* InitValues.swift */; };
 		C1648270258A41100016E6F1 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164826F258A41100016E6F1 /* SectionTitle.swift */; };
 		C170BA422587FE38003A44C6 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C170BA412587FE38003A44C6 /* RangeSlider.swift */; };
@@ -44,7 +43,6 @@
 		C13EEF8E2589104D00362CD1 /* SliderPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPoint.swift; sourceTree = "<group>"; };
 		C13EEF902589105D00362CD1 /* SliderPointLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderPointLocation.swift; sourceTree = "<group>"; };
 		C13EEF922589106E00362CD1 /* SliderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderInfo.swift; sourceTree = "<group>"; };
-		C13EEF942589108100362CD1 /* SliderLocationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLocationInfo.swift; sourceTree = "<group>"; };
 		C164826B258A3D750016E6F1 /* InitValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitValues.swift; sourceTree = "<group>"; };
 		C164826F258A41100016E6F1 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		C170BA412587FE38003A44C6 /* RangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -111,7 +109,6 @@
 				C13EEF8E2589104D00362CD1 /* SliderPoint.swift */,
 				C13EEF902589105D00362CD1 /* SliderPointLocation.swift */,
 				C13EEF922589106E00362CD1 /* SliderInfo.swift */,
-				C13EEF942589108100362CD1 /* SliderLocationInfo.swift */,
 				C164826B258A3D750016E6F1 /* InitValues.swift */,
 				C1FCAD81258AAAF2006908D6 /* Constants.swift */,
 			);
@@ -215,7 +212,6 @@
 				C13EEF882588D96300362CD1 /* SliderSettings.swift in Sources */,
 				C1BA14A42588C5EB00B0A226 /* SliderLabels.swift in Sources */,
 				C11499152587DE5300409BF4 /* SceneDelegate.swift in Sources */,
-				C13EEF952589108100362CD1 /* SliderLocationInfo.swift in Sources */,
 				C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */,
 				C11499172587DE5300409BF4 /* FiltersEditorView.swift in Sources */,
 				C164826C258A3D750016E6F1 /* InitValues.swift in Sources */,

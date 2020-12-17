@@ -27,19 +27,21 @@ class PointConverter {
 
 class SliderSettings {
     
-    let width: CGFloat
-    
-    init(width: CGFloat) {
-        self.width = width - 15
+    var width: CGFloat {
+        return UIScreen.main.bounds.width - 60 - 15
     }
+    
+    /*init(width: CGFloat) {
+        self.width = width// - 15
+    }*/
     
     private let converter = PointConverter()
     
     var defaultValues: [SliderPoint] = [
                 SliderPoint(id: 0, minValue: 0, maxValue: 32, step: 1),
                 SliderPoint(id: 1, minValue: 0, maxValue: 32, step: 2),
-                SliderPoint(id: 2, minValue: 17, maxValue: 20, step: 1),
-                SliderPoint(id: 3, minValue: 6, maxValue: 14, step: 1)]
+                SliderPoint(id: 2, minValue: 17, maxValue: 19, step: 1),
+                SliderPoint(id: 3, minValue: 6, maxValue: 13, step: 1)]
     
     var defaultValuesCoordinates: [SliderPointLocation] {
         return coordinatesArray(values: defaultValues)
@@ -49,6 +51,7 @@ class SliderSettings {
         var result = [SliderPointLocation]()
         for value in values {
             let newPoint = convertToCoordinate(point: value)
+            print(newPoint)
             result.append(newPoint)
         }
         return result
@@ -59,9 +62,12 @@ class SliderSettings {
     }
     
     func currentIntValues(values: [SliderPointLocation]) -> [SliderPoint] {
+        
+        print(width)
         var result = [SliderPoint]()
         for value in values {
             let newPoint = convertToInt(from: value)
+            print(newPoint)
             result.append(newPoint)
         }
         return result

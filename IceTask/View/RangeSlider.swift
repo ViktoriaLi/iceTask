@@ -18,31 +18,32 @@ struct RangeSlider: View {
         case maxValue = "maxValue"
     }
     
-    var width = UIScreen.main.bounds.width - 60
+    var width = UIScreen.main.bounds.width - 60 - 15
     let converter = PointConverter()
-    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
+    let sliderManager = SliderSettings()
 
     var body: some View {
         
         VStack {
             ZStack(alignment: .leading) {
                 Rectangle()
-                    .fill(Color.gray.opacity(0.5))
-                    .frame(width: width, height: 3)
+                    .fill(Constants.defaultLineColor)
+                    .frame(width: width, height: Constants.sliderLineHeight)
                 Rectangle()
                     .fill(Color.blue)
-                    .frame(width: currentValue.maxValue - currentValue.minValue, height: 3)
+                    .frame(width: currentValue.maxValue - currentValue.minValue, height: Constants.sliderLineHeight)
                     .offset(x: currentValue.minValue)
                 SliderLabels(point: $currentValue)
                 .padding(.bottom, 70.0)
                 HStack(alignment: .center, spacing: 10) {
                     SliderCircle()
-                    .offset(x: self.currentValue.minValue - 15)
+                        .offset(x: self.currentValue.minValue - Constants.circleWidth / 2)
                     .gesture(
                         DragGesture()
                             .onChanged({ (value) in
                                 if value.location.x >= 0 && value.location.x <= self.currentValue.maxValue && value.location.x <= self.width {
                                     self.currentValue.minValue = value.location.x
+                                    print(value.location.x)
                                     self.updateResetState(value: self.currentValue.minValue, step: self.currentValue.step, whichCase: .minValue)
                                 }}))
                     SliderCircle()
@@ -51,15 +52,15 @@ struct RangeSlider: View {
                         DragGesture()
                             .onChanged({ (value) in
                                 if value.location.x <= self.width && value.location.x >= self.currentValue.minValue {
+                                    print(value.location.x)
                                     self.currentValue.maxValue = value.location.x
                                     self.updateResetState(value: self.currentValue.maxValue, step: self.currentValue.step, whichCase: .maxValue)
                                 }}))}
-
                 .allowsTightening(false)
             }
         }
         .padding()
-        .frame(height: 94.0)
+        .frame(height: Constants.sliderViewHeight)
     }
     
     private func updateResetState(value: CGFloat, step: Int, whichCase: Value) {

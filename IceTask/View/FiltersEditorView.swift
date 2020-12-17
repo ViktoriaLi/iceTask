@@ -17,17 +17,17 @@ struct FiltersEditorView: View {
     
     @State private var resetAllowed = Array(repeating: false, count: 4)
         
-    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
+    let sliderManager = SliderSettings()
     
     var footer: some View {
         VStack(alignment: .center) {
                 Button(action: self.updateValues) {
                     Text("ПРИМЕНИТЬ")
                     .fontWeight(.bold)
-                    .font(.system(size: 16))
+                        .font(.system(size: Constants.textSizeApplyButton))
                 }.buttonStyle(BlueButtonStyle())
-            .padding(.bottom, 25)
-            .padding(.top, 50)
+                    .padding(.bottom, Constants.applyButtonBottom)
+                    .padding(.top, Constants.applyButtonTop)
         }
     }
     
@@ -60,6 +60,7 @@ struct FiltersEditorView: View {
             }, trailing:
             Button("Сбросить") {
                 self.resetSliders()
+                self.addResetTrigger()
             }.disabled(!resetAllowed.contains(true)))
     }
     
@@ -75,6 +76,8 @@ struct FiltersEditorView: View {
     private func addResetTrigger() {
         for index in 0..<choosenSliders.count {
             let intCurrent = sliderManager.convertToInt(from: choosenSliders[index])
+            print("\(index) - def: \(sliderManager.defaultValues[index]) - curr: \(intCurrent)")
+
             if intCurrent == sliderManager.defaultValues[index] {
                 resetAllowed[index] = false
             } else {

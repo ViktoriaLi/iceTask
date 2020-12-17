@@ -11,7 +11,7 @@ import SwiftUI
 
 class InitValues: ObservableObject {
     
-    let sliderManager = SliderSettings(width: UIScreen.main.bounds.width - 60)
+    let sliderManager = SliderSettings()
     
     @Published var values: [SliderPoint]
     @Published var valuesCoordinates = [SliderPointLocation]()

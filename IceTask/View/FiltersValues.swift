@@ -32,7 +32,7 @@ struct FiltersValues: View {
     
     private func filterSet(minValue: Int, maxValue: Int) -> String {
         let textMinValue = "\(minValue + 1) - "
-        let textMaxValue = "\(SliderLabel.chooseText(for: maxValue - 1))"
+        let textMaxValue = "\(SliderLabel.chooseText(for: maxValue))"
         return textMinValue + textMaxValue
     }
 }
