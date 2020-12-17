@@ -40,7 +40,6 @@ struct FiltersEditorView: View {
         .navigationBarTitle("Фильтры", displayMode: .inline)
         .navigationBarItems(leading:
             Button(action: {
-                self.resetSliders()
                 self.presentationMode.wrappedValue.dismiss()
             }){
                 Image("close")
@@ -62,8 +61,8 @@ struct FiltersEditorView: View {
                 }.buttonStyle(BlueButtonStyle())
                     .padding(.bottom, Constants.applyButtonBottom)
                     .padding(.top, Constants.applyButtonTop)
-                    .padding(.leading, 15)
-                    .padding(.trailing, 15)
+                    .padding(.leading, Constants.leadingPadding)
+                    .padding(.trailing, Constants.trailingPadding)
         }
     }
     
