@@ -12,11 +12,11 @@ struct BlueButtonStyle: ButtonStyle {
 
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
-        .frame(width: UIScreen.main.bounds.width - 60 - 15, alignment: .center)
+        .frame(width: WidthGetter.width, alignment: .center)
         .padding()
-        .background(Color.blue)
+        .background(Constants.actionButtonBackground)
         .foregroundColor(Color.white)
         .cornerRadius(10)
-        .shadow(color: Color("buttonShadow"), radius: 10, x: 0, y: 0)
+        .shadow(color: Constants.actionButtonShadow, radius: 10, x: 0, y: 0)
   }
 }

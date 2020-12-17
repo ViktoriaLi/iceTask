@@ -12,18 +12,18 @@ struct SliderLabels: View {
 
     @Binding var point: SliderPointLocation
         
-    let converter = PointConverter()
-    var width = UIScreen.main.bounds.width - 60 - 15
+    private let converter = PointConverter()
+    var width = WidthGetter.width
     
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
-            Text(labelText(from: point.minValue)).font(.system(size: 16))
-                    .foregroundColor(Color.blue)
-                    .multilineTextAlignment(.leading)
+            Text(labelText(from: point.minValue))
+                .font(.system(size: Constants.sliderLabelFontSize))
+                .foregroundColor(Constants.sliderLabelColor)
             Spacer()
-            Text(labelText(from: point.maxValue)).font(.system(size: 16))
-                    .foregroundColor(Color.blue)
-                    .multilineTextAlignment(.trailing)
+            Text(labelText(from: point.maxValue))
+                .font(.system(size: Constants.sliderLabelFontSize))
+                .foregroundColor(Constants.sliderLabelColor)
         }
     }
     

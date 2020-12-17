@@ -17,12 +17,10 @@ struct SectionTitle: View {
         {
             Text("\(index + 1)")
             .foregroundColor(.black)
-            .font(.system(size: 17))
+                .font(.system(size: Constants.sectionTitleFontSize))
             .fontWeight(.bold)
             .frame(height: 34)
-            
         }
-        
     }
 }
 

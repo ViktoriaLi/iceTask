@@ -26,6 +26,8 @@
 		C1BA14A42588C5EB00B0A226 /* SliderLabels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BA14A32588C5EB00B0A226 /* SliderLabels.swift */; };
 		C1FCAD7E258AAA44006908D6 /* BlueButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCAD7D258AAA44006908D6 /* BlueButtonStyle.swift */; };
 		C1FCAD82258AAAF2006908D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCAD81258AAAF2006908D6 /* Constants.swift */; };
+		C1FCAD87258B79BF006908D6 /* PointConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCAD86258B79BE006908D6 /* PointConverter.swift */; };
+		C1FCAD89258B79ED006908D6 /* WidthGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FCAD88258B79ED006908D6 /* WidthGetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		C1BA14A32588C5EB00B0A226 /* SliderLabels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderLabels.swift; sourceTree = "<group>"; };
 		C1FCAD7D258AAA44006908D6 /* BlueButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueButtonStyle.swift; sourceTree = "<group>"; };
 		C1FCAD81258AAAF2006908D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C1FCAD86258B79BE006908D6 /* PointConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointConverter.swift; sourceTree = "<group>"; };
+		C1FCAD88258B79ED006908D6 /* WidthGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidthGetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,11 +88,8 @@
 			children = (
 				C13EEF8B2589101C00362CD1 /* Model */,
 				C13EEF96258910CB00362CD1 /* View */,
-				C11499122587DE5300409BF4 /* AppDelegate.swift */,
-				C11499142587DE5300409BF4 /* SceneDelegate.swift */,
-				C11499182587DE5900409BF4 /* Assets.xcassets */,
-				C114991D2587DE5900409BF4 /* LaunchScreen.storyboard */,
-				C11499202587DE5900409BF4 /* Info.plist */,
+				C1FCAD83258B76D7006908D6 /* Services */,
+				C1FCAD84258B7801006908D6 /* SupportFiles */,
 				C114991A2587DE5900409BF4 /* Preview Content */,
 			);
 			path = IceTask;
@@ -123,11 +124,40 @@
 				C170BA412587FE38003A44C6 /* RangeSlider.swift */,
 				C170BA4325880F72003A44C6 /* SliderCircle.swift */,
 				C1BA14A32588C5EB00B0A226 /* SliderLabels.swift */,
-				C13EEF872588D96300362CD1 /* SliderSettings.swift */,
 				C164826F258A41100016E6F1 /* SectionTitle.swift */,
-				C1FCAD7D258AAA44006908D6 /* BlueButtonStyle.swift */,
+				C1FCAD85258B781D006908D6 /* Style */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C1FCAD83258B76D7006908D6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C13EEF872588D96300362CD1 /* SliderSettings.swift */,
+				C1FCAD86258B79BE006908D6 /* PointConverter.swift */,
+				C1FCAD88258B79ED006908D6 /* WidthGetter.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C1FCAD84258B7801006908D6 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C11499122587DE5300409BF4 /* AppDelegate.swift */,
+				C11499142587DE5300409BF4 /* SceneDelegate.swift */,
+				C11499182587DE5900409BF4 /* Assets.xcassets */,
+				C114991D2587DE5900409BF4 /* LaunchScreen.storyboard */,
+				C11499202587DE5900409BF4 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		C1FCAD85258B781D006908D6 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				C1FCAD7D258AAA44006908D6 /* BlueButtonStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,8 +238,10 @@
 				C13EEF932589106E00362CD1 /* SliderInfo.swift in Sources */,
 				C13EEF8A258900D100362CD1 /* FiltersValues.swift in Sources */,
 				C1FCAD7E258AAA44006908D6 /* BlueButtonStyle.swift in Sources */,
+				C1FCAD89258B79ED006908D6 /* WidthGetter.swift in Sources */,
 				C1648270258A41100016E6F1 /* SectionTitle.swift in Sources */,
 				C13EEF882588D96300362CD1 /* SliderSettings.swift in Sources */,
+				C1FCAD87258B79BF006908D6 /* PointConverter.swift in Sources */,
 				C1BA14A42588C5EB00B0A226 /* SliderLabels.swift in Sources */,
 				C11499152587DE5300409BF4 /* SceneDelegate.swift in Sources */,
 				C170BA4425880F72003A44C6 /* SliderCircle.swift in Sources */,
@@ -356,7 +388,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IceTask/Preview Content\"";
 				DEVELOPMENT_TEAM = 2XN82VQ59H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = IceTask/Info.plist;
+				INFOPLIST_FILE = IceTask/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +408,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IceTask/Preview Content\"";
 				DEVELOPMENT_TEAM = 2XN82VQ59H;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = IceTask/Info.plist;
+				INFOPLIST_FILE = IceTask/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -18,9 +18,9 @@ struct RangeSlider: View {
         case maxValue = "maxValue"
     }
     
-    var width = UIScreen.main.bounds.width - 60 - 15
-    let converter = PointConverter()
-    let sliderManager = SliderSettings()
+    var width = WidthGetter.width
+    private let converter = PointConverter()
+    private let sliderManager = SliderSettings()
 
     var body: some View {
         
@@ -30,7 +30,7 @@ struct RangeSlider: View {
                     .fill(Constants.defaultLineColor)
                     .frame(width: width, height: Constants.sliderLineHeight)
                 Rectangle()
-                    .fill(Color.blue)
+                    .fill(Constants.setLineColor)
                     .frame(width: currentValue.maxValue - currentValue.minValue, height: Constants.sliderLineHeight)
                     .offset(x: currentValue.minValue)
                 SliderLabels(point: $currentValue)
@@ -43,16 +43,14 @@ struct RangeSlider: View {
                             .onChanged({ (value) in
                                 if value.location.x >= 0 && value.location.x <= self.currentValue.maxValue && value.location.x <= self.width {
                                     self.currentValue.minValue = value.location.x
-                                    print(value.location.x)
                                     self.updateResetState(value: self.currentValue.minValue, step: self.currentValue.step, whichCase: .minValue)
                                 }}))
                     SliderCircle()
-                    .offset(x: self.currentValue.maxValue - 46)
+                    .offset(x: self.currentValue.maxValue - Constants.circleWidth - Constants.circleWidth / 2)
                     .gesture(
                         DragGesture()
                             .onChanged({ (value) in
                                 if value.location.x <= self.width && value.location.x >= self.currentValue.minValue {
-                                    print(value.location.x)
                                     self.currentValue.maxValue = value.location.x
                                     self.updateResetState(value: self.currentValue.maxValue, step: self.currentValue.step, whichCase: .maxValue)
                                 }}))}

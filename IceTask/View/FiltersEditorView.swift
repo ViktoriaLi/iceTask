@@ -62,6 +62,7 @@ struct FiltersEditorView: View {
                 self.resetSliders()
                 self.addResetTrigger()
             }.disabled(!resetAllowed.contains(true)))
+            .foregroundColor(resetAllowed.contains(true) ? Constants.resetButtonColor: Color.gray)
     }
     
     private func updateValues() {
@@ -76,8 +77,6 @@ struct FiltersEditorView: View {
     private func addResetTrigger() {
         for index in 0..<choosenSliders.count {
             let intCurrent = sliderManager.convertToInt(from: choosenSliders[index])
-            print("\(index) - def: \(sliderManager.defaultValues[index]) - curr: \(intCurrent)")
-
             if intCurrent == sliderManager.defaultValues[index] {
                 resetAllowed[index] = false
             } else {

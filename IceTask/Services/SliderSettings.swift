@@ -7,33 +7,8 @@
 //
 
 import Foundation
-import SwiftUI
-
-class PointConverter {
-    
-    func intValue(from float: CGFloat, step: Int, width: CGFloat) -> Int {
-        let unit: CGFloat = (float / CGFloat(step)) * 32.0
-        return Int(unit / width) * step
-    }
-    
-    func floatValue(from value: Int, step: Int, width: CGFloat) -> CGFloat {
-        var result = CGFloat(value) * ((width / 32.0) * CGFloat(step))
-        if result > width {
-            result = width
-        }
-        return result
-    }
-}
 
 class SliderSettings {
-    
-    var width: CGFloat {
-        return UIScreen.main.bounds.width - 60 - 15
-    }
-    
-    /*init(width: CGFloat) {
-        self.width = width// - 15
-    }*/
     
     private let converter = PointConverter()
     
@@ -51,29 +26,25 @@ class SliderSettings {
         var result = [SliderPointLocation]()
         for value in values {
             let newPoint = convertToCoordinate(point: value)
-            print(newPoint)
             result.append(newPoint)
         }
         return result
     }
     
     func convertToCoordinate(point: SliderPoint) -> SliderPointLocation {
-        return SliderPointLocation(id: point.id, minValue: converter.floatValue(from: point.minValue, step: point.step, width: width), maxValue: converter.floatValue(from: point.maxValue, step: point.step, width: width), step: point.step)
+        return SliderPointLocation(id: point.id, minValue: converter.floatValue(from: point.minValue, step: point.step, width: WidthGetter.width), maxValue: converter.floatValue(from: point.maxValue, step: point.step, width: WidthGetter.width), step: point.step)
     }
     
     func currentIntValues(values: [SliderPointLocation]) -> [SliderPoint] {
-        
-        print(width)
         var result = [SliderPoint]()
         for value in values {
             let newPoint = convertToInt(from: value)
-            print(newPoint)
             result.append(newPoint)
         }
         return result
     }
     
     func convertToInt(from value: SliderPointLocation) -> SliderPoint {
-        return SliderPoint(id: value.id, minValue: converter.intValue(from: value.minValue, step: value.step, width: width), maxValue: converter.intValue(from: value.maxValue, step: value.step, width: width), step: value.step)
+        return SliderPoint(id: value.id, minValue: converter.intValue(from: value.minValue, step: value.step, width: WidthGetter.width), maxValue: converter.intValue(from: value.maxValue, step: value.step, width: WidthGetter.width), step: value.step)
     }
 }
