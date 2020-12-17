@@ -62,6 +62,8 @@ struct FiltersEditorView: View {
                 }.buttonStyle(BlueButtonStyle())
                     .padding(.bottom, Constants.applyButtonBottom)
                     .padding(.top, Constants.applyButtonTop)
+                    .padding(.leading, 15)
+                    .padding(.trailing, 15)
         }
     }
     
