@@ -17,20 +17,8 @@ struct FiltersEditorView: View {
     
     @State private var resetAllowed = Array(repeating: false, count: 4)
         
-    let sliderManager = SliderSettings()
-    
-    var footer: some View {
-        VStack(alignment: .center) {
-                Button(action: self.updateValues) {
-                    Text("ПРИМЕНИТЬ")
-                    .fontWeight(.bold)
-                        .font(.system(size: Constants.textSizeApplyButton))
-                }.buttonStyle(BlueButtonStyle())
-                    .padding(.bottom, Constants.applyButtonBottom)
-                    .padding(.top, Constants.applyButtonTop)
-        }
-    }
-    
+    private let sliderManager = SliderSettings()
+
     var body: some View {
         VStack {
             Form {
@@ -63,6 +51,18 @@ struct FiltersEditorView: View {
                 self.addResetTrigger()
             }.disabled(!resetAllowed.contains(true)))
             .foregroundColor(resetAllowed.contains(true) ? Constants.resetButtonColor: Color.gray)
+    }
+    
+    private var footer: some View {
+        VStack(alignment: .center) {
+                Button(action: self.updateValues) {
+                    Text("ПРИМЕНИТЬ")
+                    .fontWeight(.bold)
+                        .font(.system(size: Constants.textSizeApplyButton))
+                }.buttonStyle(BlueButtonStyle())
+                    .padding(.bottom, Constants.applyButtonBottom)
+                    .padding(.top, Constants.applyButtonTop)
+        }
     }
     
     private func updateValues() {

@@ -21,7 +21,8 @@ struct FiltersValues: View {
                 }
                 NavigationLink(destination: FiltersEditorView(choosenSliders: $scheme.valuesCoordinates, choosenSlidersInt: $scheme.changeableValues)) {
                     Text("ИЗМЕНИТЬ")
-                        .foregroundColor(Color.blue)
+                        .foregroundColor(Color("blueAccent"))
+                        .fontWeight(.bold)
                 }.buttonStyle(PlainButtonStyle())
                 Spacer()
             }
