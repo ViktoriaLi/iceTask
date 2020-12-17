@@ -12,7 +12,7 @@ struct BlueButtonStyle: ButtonStyle {
 
   func makeBody(configuration: Self.Configuration) -> some View {
     configuration.label
-        .frame(width: UIScreen.main.bounds.width - 60, alignment: .center)
+        .frame(width: UIScreen.main.bounds.width - 60 - 15, alignment: .center)
         .padding()
         .background(Color.blue)
         .foregroundColor(Color.white)

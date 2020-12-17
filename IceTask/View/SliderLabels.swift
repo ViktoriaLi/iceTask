@@ -13,7 +13,7 @@ struct SliderLabels: View {
     @Binding var point: SliderPointLocation
         
     let converter = PointConverter()
-    var width = UIScreen.main.bounds.width - 60
+    var width = UIScreen.main.bounds.width - 60 - 15
     
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
